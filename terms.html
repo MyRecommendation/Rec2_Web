@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions – My Recommendation</title>
+  <meta name="description" content="Terms and Conditions, Privacy Policy, and End-User License Agreement for the My Recommendation REC app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --blue:       #5b73e8;
+      --blue-dark:  #4a60d5;
+      --blue-light: #eef0fd;
+      --green:      #22c77a;
+      --navy:       #0f1b3d;
+      --body-text:  #444c6a;
+      --light-bg:   #f4f5fb;
+      --white:      #ffffff;
+      --border:     #e2e5f0;
+      --font:       'Nunito', sans-serif;
+      --max-w:      1200px;
+      --pad:        clamp(1rem, 5vw, 2.5rem);
+      --radius:     16px;
+      --radius-sm:  10px;
+      --radius-pill:999px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--body-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main { flex: 1; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 30px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-blue { background: var(--blue); color: var(--white); box-shadow: 0 4px 16px rgba(91,115,232,0.3); }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); }
+    .btn-white { background: var(--white); color: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+
+    /* ── HEADER / NAV ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 1rem; }
+    .nav-left { display: flex; align-items: center; gap: 14px; }
+    .nav-logo-img { height: 44px; width: auto; }
+    .nav-right { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-dl-btn { font-size: 14px !important; padding: 10px 22px !important; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links > li > a {
+      font-size: 15px; font-weight: 600; color: var(--body-text);
+      transition: color 0.2s; display: flex; align-items: center; gap: 4px;
+    }
+    .nav-links > li > a:hover,
+    .nav-links > li > a.active { color: var(--green); }
+    .nav-links > li { position: relative; }
+    .nav-links > li > ul {
+      display: none; position: absolute; top: 100%; left: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); min-width: 230px;
+      list-style: none; padding: 12px 0 0.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .nav-links > li:hover > ul { display: block; }
+    .nav-links > li > ul > li > a {
+      display: block; padding: 0.6rem 1.2rem; font-size: 14px;
+      font-weight: 500; color: var(--body-text); white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-links > li > ul > li > a:hover { background: var(--blue-light); color: var(--blue); }
+    .nav-socials { display: flex; align-items: center; gap: 14px; }
+    .nav-socials a { color: var(--body-text); transition: color 0.2s; display: flex; }
+    .nav-socials a:hover { color: var(--green); }
+    .nav-socials svg { width: 22px; height: 22px; fill: currentColor; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; flex-direction: column; background: var(--white); border-top: 1px solid var(--border); padding: 1rem var(--pad) 1.5rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 0.7rem 0; font-size: 15px; font-weight: 600; color: var(--body-text); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-of-type { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--blue); }
+    .mobile-menu a.sub { padding-left: 1.25rem; font-size: 14px; font-weight: 500; }
+    .mobile-menu .mob-cta { margin-top: 1rem; text-align: center; }
+
+    /* ── PAGE HERO ── */
+    .legal-hero {
+      background: var(--blue);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      text-align: center;
+    }
+    .legal-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .legal-hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ── TAB NAV ── */
+    .tab-nav {
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+    }
+    .tab-nav-inner {
+      display: flex;
+      gap: 0;
+    }
+    .tab-btn {
+      padding: 1rem 1.5rem;
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--body-text);
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -2px;
+    }
+    .tab-btn:hover { color: var(--blue); }
+    .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* ── LEGAL CONTENT ── */
+    .legal-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      display: none;
+    }
+    .legal-section.active { display: block; }
+
+    .legal-body { max-width: 860px; }
+    .legal-body .last-updated {
+      font-size: 13px;
+      color: #8892b0;
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+    .legal-body h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 2rem 0 0.75rem;
+    }
+    .legal-body h2:first-of-type { margin-top: 0; }
+    .legal-body p {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .legal-body ul, .legal-body ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .legal-body li {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.8;
+      margin-bottom: 0.4rem;
+    }
+    .legal-body a { color: var(--blue); text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    .footer-brand-bar { background: var(--white); border-top: 1px solid var(--border); padding: 1.75rem 0; }
+    .footer-brand-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-brand-left { display: flex; align-items: center; gap: 12px; }
+    .footer-brand-left img { height: 40px; width: auto; }
+    .footer-brand-name { font-size: 1.1rem; font-weight: 800; color: var(--navy); }
+    .footer-email { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: var(--body-text); transition: color 0.2s; }
+    .footer-email:hover { color: var(--blue); }
+    .footer-email-icon { width: 34px; height: 34px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .footer-email-icon svg { width: 16px; height: 16px; fill: white; }
+    .footer-social-ig a { color: var(--body-text); display: flex; align-items: center; transition: color 0.2s; }
+    .footer-social-ig a:hover { color: var(--green); }
+    .footer-social-ig svg { width: 24px; height: 24px; fill: currentColor; }
+    .footer-nav-bar { background: var(--light-bg); border-top: 1px solid var(--border); padding: 1.25rem 0; }
+    .footer-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; flex-wrap: wrap; }
+    .footer-nav-links a { font-size: 14px; font-weight: 600; color: var(--body-text); transition: color 0.2s; display: flex; align-items: center; gap: 4px; }
+    .footer-nav-links a:hover { color: var(--green); }
+    .footer-nav-links .active { color: var(--green); }
+    .footer-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .footer-actions .btn { font-size: 14px; padding: 11px 24px; }
+    .footer-copy-bar { background: var(--blue); padding: 1rem 0; }
+    .footer-copy-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-copy-inner p { font-size: 13px; color: rgba(255,255,255,0.85); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .nav-right { display: none; }
+      .hamburger { display: flex; }
+      .footer-brand-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+      .footer-nav-inner { flex-direction: column; align-items: flex-start; }
+      .footer-copy-inner { flex-direction: column; }
+    }
+    @media (max-width: 540px) {
+      .footer-actions { flex-direction: column; width: 100%; }
+      .footer-actions .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <nav class="container">
+    <div class="nav-left">
+      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank">
+        <img class="nav-logo-img" src="images/shared/logo.webp" alt="REC app icon" />
+      </a>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="our-services.html">Our Services ▾</a>
+          <ul>
+            <li><a href="services/yoga-instructor.html">Yoga Instructor Page</a></li>
+            <li><a href="services/nail-technician.html">Nail Technician Page</a></li>
+            <li><a href="services/bartender.html">Bartender Page</a></li>
+            <li><a href="services/golf-cart.html">Golf Beverage Cart Attendant</a></li>
+          </ul>
+        </li>
+        <li><a href="app-info.html">App Info</a></li>
+      </ul>
+      <div class="nav-socials">
+        <a href="https://www.tiktok.com/@myrecommendation57" aria-label="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/myrecommendationapp" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue nav-dl-btn">Download App</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mob">
+    <a href="index.html">Home</a>
+    <a href="our-services.html">Our Services</a>
+    <a href="services/yoga-instructor.html" class="sub">› Yoga Instructors</a>
+    <a href="services/nail-technician.html" class="sub">› Nail Technicians</a>
+    <a href="services/bartender.html" class="sub">› Bartenders</a>
+    <a href="services/golf-cart.html" class="sub">› Golf Cart Attendants</a>
+    <a href="app-info.html">App Info</a>
+    <div class="mob-cta">
+      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue" style="width:100%;justify-content:center;">Download App</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <div class="legal-hero">
+    <div class="container">
+      <h1>Legal Documents</h1>
+      <p>Terms &amp; Conditions · Privacy Policy · End-User License Agreement</p>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <div class="container">
+      <div class="tab-nav-inner">
+        <button class="tab-btn active" data-tab="terms">Terms &amp; Conditions</button>
+        <button class="tab-btn" data-tab="privacy">Privacy Policy</button>
+        <button class="tab-btn" data-tab="eula">End-User License Agreement</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TERMS & CONDITIONS ── -->
+  <div id="tab-terms" class="legal-section active">
+    <div class="container">
+      <div class="legal-body">
+        <p class="last-updated">Last updated: April 1, 2025</p>
+
+        <p>These Terms and Conditions constitute a legally binding agreement made between you and Jimbonzo LLC ("Company," "we," "us," or "our"), concerning your access to and use of the My Recommendation (REC) application. By accessing or using the App, you agree to be bound by these Terms.</p>
+
+        <p>The App is intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the App.</p>
+
+        <h2>1. Intellectual Property Rights</h2>
+        <p>Unless otherwise indicated, the App is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the App (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights.</p>
+
+        <h2>2. User Representations</h2>
+        <p>By using the App, you represent and warrant that:</p>
+        <ul>
+          <li>All registration information you submit will be true, accurate, current, and complete.</li>
+          <li>You will maintain the accuracy of such information and promptly update such registration information as necessary.</li>
+          <li>You have the legal capacity and you agree to comply with these Terms and Conditions.</li>
+          <li>You are not a minor in the jurisdiction in which you reside (you must be at least 18 years old).</li>
+          <li>You will not access the App through automated or non-human means.</li>
+          <li>You will not use the App for any illegal or unauthorized purpose.</li>
+          <li>Your use of the App will not violate any applicable law or regulation.</li>
+        </ul>
+
+        <h2>3. Prohibited Activities</h2>
+        <p>You may not access or use the App for any purpose other than that for which we make the App available. As a user of the App, you agree not to:</p>
+        <ul>
+          <li>Systematically retrieve data or other content from the App to create or compile a collection, compilation, database, or directory without written permission from us.</li>
+          <li>Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords.</li>
+          <li>Circumvent, disable, or otherwise interfere with security-related features of the App.</li>
+          <li>Disparage, tarnish, or otherwise harm, in our opinion, us and/or the App.</li>
+          <li>Use any information obtained from the App in order to harass, abuse, or harm another person.</li>
+          <li>Make improper use of our support services or submit false reports of abuse or misconduct.</li>
+          <li>Use the App in a manner inconsistent with any applicable laws or regulations.</li>
+          <li>Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material that interferes with any party's uninterrupted use of the App.</li>
+          <li>Engage in any automated use of the system, such as using scripts to send comments or messages.</li>
+          <li>Delete the copyright or other proprietary rights notice from any Content.</li>
+          <li>Attempt to impersonate another user or person or use the username of another user.</li>
+          <li>Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism.</li>
+          <li>Interfere with, disrupt, or create an undue burden on the App or the networks or services connected to the App.</li>
+          <li>Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of the App to you.</li>
+          <li>Use the App as part of any effort to compete with us or otherwise use the App and/or the Content for any revenue-generating endeavor or commercial enterprise.</li>
+        </ul>
+
+        <h2>4. User-Generated Contributions</h2>
+        <p>The App may invite you to chat, contribute to, or participate in blogs, message boards, online forums, and other functionality, and may provide you with the opportunity to create, submit, post, display, transmit, perform, publish, distribute, or broadcast content and materials to us or on the App.</p>
+        <p>By submitting contributions, you grant us an unrestricted, unlimited, irrevocable, perpetual, non-exclusive, transferable, royalty-free, fully-paid, worldwide right and license to use, copy, reproduce, disclose, sell, resell, publish, broadcast, retitle, archive, store, cache, publicly perform, publicly display, reformat, translate, transmit, excerpt, and distribute such contributions for any purpose.</p>
+
+        <h2>5. Review Guidelines</h2>
+        <p>When posting a review, you must comply with the following criteria:</p>
+        <ul>
+          <li>You should have firsthand experience with the person/entity being reviewed.</li>
+          <li>Your reviews should not contain offensive profanity, or abusive, racist, offensive, or hateful language.</li>
+          <li>Your reviews should not contain discriminatory references based on religion, race, gender, national origin, age, marital status, sexual orientation, or disability.</li>
+          <li>Your reviews should not contain references to illegal activity.</li>
+          <li>You should not be affiliated with competitors if posting negative reviews.</li>
+          <li>You should not make any conclusions as to the legality of conduct.</li>
+          <li>You may not post any false or misleading statements.</li>
+        </ul>
+
+        <h2>6. Mobile Application License</h2>
+        <p>If you access the App via a mobile application, then we grant you a revocable, non-exclusive, non-transferable, limited right to install and use the mobile application on wireless electronic devices owned or controlled by you, and to access and use the mobile application on such devices strictly in accordance with the terms and conditions of this mobile application license.</p>
+        <p>You shall not: (1) decompile, reverse engineer, disassemble, attempt to derive the source code of, or decrypt the application; (2) make any modification, adaptation, improvement, enhancement, translation, or derivative work from the application; (3) violate any applicable laws, rules, or regulations in connection with your access or use of the application; (4) remove, alter, or obscure any proprietary notice posted by us.</p>
+
+        <h2>7. Dispute Resolution</h2>
+        <p>To expedite resolution and control the cost of any dispute, controversy, or claim related to these Terms of Use, you and the Company agree to first attempt to negotiate any dispute informally for at least thirty (30) days before initiating arbitration. Such informal negotiations commence upon written notice from one Party to the other Party.</p>
+        <p>If the Parties are unable to resolve a dispute through informal negotiations, the dispute (except those disputes expressly excluded below) will be finally and exclusively resolved through binding arbitration.</p>
+
+        <h2>8. Governing Law</h2>
+        <p>These Terms shall be governed by and defined following the laws of the State of Illinois, United States. Jimbonzo LLC and yourself irrevocably consent that the courts of Illinois shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>In order to resolve a complaint regarding the App or to receive further information regarding use of the App, please contact us at:</p>
+        <p><strong>Jimbonzo LLC</strong><br>Woodridge, IL 60517<br>Email: <a href="mailto:support@myrecommendation.com">support@myrecommendation.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PRIVACY POLICY ── -->
+  <div id="tab-privacy" class="legal-section">
+    <div class="container">
+      <div class="legal-body">
+        <p class="last-updated">Last updated: July 23, 2025</p>
+
+        <p>This Privacy Policy describes how Jimbonzo LLC ("Company," "we," "us," or "our") collects, uses, and shares information about you when you use the My Recommendation (REC) application.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect information you provide directly to us, including:</p>
+        <ul>
+          <li>Name and email address</li>
+          <li>Phone number and mailing address</li>
+          <li>Profile information and photos</li>
+          <li>Payment and billing information</li>
+          <li>Communications you send to us</li>
+        </ul>
+        <p>We also collect information automatically when you use the App, including:</p>
+        <ul>
+          <li>IP address and device identifiers</li>
+          <li>Browser type and operating system</li>
+          <li>Pages viewed and links clicked</li>
+          <li>Location data (with your permission)</li>
+          <li>Camera and photo library access (with your permission)</li>
+        </ul>
+
+        <h2>2. Third-Party Social Login</h2>
+        <p>We may allow you to register and log in using your third-party social media account details (like Facebook, Twitter, Instagram, Google, LinkedIn, or TikTok). Where you choose to do this, we will receive certain profile information about you from your social media provider. The profile information we receive may vary depending on the social media provider concerned.</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide, maintain, and improve our services</li>
+          <li>Create and manage your account</li>
+          <li>Process transactions and send related information</li>
+          <li>Send promotional communications (with your consent)</li>
+          <li>Respond to comments and questions</li>
+          <li>Monitor and analyze usage patterns and trends</li>
+          <li>Detect and prevent fraudulent transactions and other illegal activities</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>4. Sharing of Information</h2>
+        <p>We may share your information in the following circumstances:</p>
+        <ul>
+          <li>With service providers who assist us in operating the App</li>
+          <li>In response to legal process or government requests</li>
+          <li>To protect the rights, property, or safety of our users or others</li>
+          <li>In connection with a merger, acquisition, or sale of assets</li>
+          <li>With your consent or at your direction</li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>Our App does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you become aware that a child has provided us with personal data, please contact us. If we become aware that we have collected personal data from anyone under the age of 13 without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+        <h2>6. Data Retention</h2>
+        <p>We retain personal data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your personal data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>Depending on your location, you may have certain rights regarding your personal information, including the right to access, correct, or delete your personal data. To exercise these rights, please contact us at <a href="mailto:support@myrecommendation.com">support@myrecommendation.com</a>.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have questions about this Privacy Policy, please contact us:</p>
+        <p><strong>Jimbonzo LLC</strong><br>Woodridge, IL 60517<br>Email: <a href="mailto:support@myrecommendation.com">support@myrecommendation.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EULA ── -->
+  <div id="tab-eula" class="legal-section">
+    <div class="container">
+      <div class="legal-body">
+        <p class="last-updated">Last updated: October 24, 2025</p>
+
+        <p>This End-User License Agreement ("EULA") is a legal agreement between you and Jimbonzo LLC governing your use of the My Recommendation (REC) mobile application.</p>
+
+        <h2>1. License Grant</h2>
+        <p>Jimbonzo LLC grants you a revocable, non-exclusive, non-transferable, limited license to download, install, and use the App strictly in accordance with the terms of this Agreement for personal, non-commercial purposes on devices that you own or control.</p>
+
+        <h2>2. License Restrictions</h2>
+        <p>You agree not to, and you will not permit others to:</p>
+        <ul>
+          <li>License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the App.</li>
+          <li>Copy or use the App for any purpose other than as permitted under the above section.</li>
+          <li>Modify, translate, adapt, merge, make derivative works of, disassemble, decompile, reverse compile or reverse engineer any part of the App.</li>
+          <li>Remove any proprietary notices or labels on the App.</li>
+        </ul>
+
+        <h2>3. Content Restrictions</h2>
+        <p>You may not transmit any content through the App that:</p>
+        <ul>
+          <li>Is unlawful, offensive, upsetting, intended to disgust, threatening, libelous, defamatory, obscene, or otherwise objectionable.</li>
+          <li>Infringes any patent, trademark, trade secret, copyright or other intellectual property or other rights of any party.</li>
+          <li>Is discriminatory based on race, sex, religion, nationality, disability, sexual orientation, or age.</li>
+          <li>Contains or transmits any unsolicited or unauthorized advertising or promotional material.</li>
+        </ul>
+
+        <h2>4. Intellectual Property</h2>
+        <p>The App, including without limitation all copyrights, patents, trademarks, trade secrets and other intellectual property rights are, and shall remain, the sole and exclusive property of Jimbonzo LLC.</p>
+
+        <h2>5. Modifications to App</h2>
+        <p>Jimbonzo LLC reserves the right to modify, suspend or discontinue, temporarily or permanently, the App or any service to which it connects, with or without notice and without liability to you.</p>
+
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>The App is provided to you "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, Jimbonzo LLC, on its own behalf and on behalf of its affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the App.</p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>Notwithstanding any damages that you might incur, the entire liability of Jimbonzo LLC and any of its suppliers under any provision of this Agreement shall be limited to the amount actually paid by you for the App or, if you haven't purchased anything, $100.00 USD. To the maximum extent permitted by applicable law, in no event shall Jimbonzo LLC or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever.</p>
+
+        <h2>8. Termination</h2>
+        <p>This Agreement is effective until terminated by you or Jimbonzo LLC. Jimbonzo LLC may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice. This Agreement will terminate immediately, without prior notice from Jimbonzo LLC, in the event that you fail to comply with any provision of this Agreement.</p>
+
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions about this Agreement, please contact us:</p>
+        <p><strong>Jimbonzo LLC</strong><br>Woodridge, IL 60517<br>Email: <a href="mailto:support@myrecommendation.com">support@myrecommendation.com</a></p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<div class="footer-brand-bar">
+  <div class="container">
+    <div class="footer-brand-inner">
+      <div class="footer-brand-left">
+        <img src="images/shared/logo.webp" alt="REC app icon" />
+        
+      </div>
+      <a href="mailto:support@myrecommendation.com" class="footer-email">
+        <div class="footer-email-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        support@myrecommendation.com
+      </a>
+      <div class="footer-social-ig">
+        <a href="https://www.instagram.com/myrecommendationapp" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-nav-bar">
+  <div class="container">
+    <div class="footer-nav-inner">
+      <ul class="footer-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-services.html">Our Services ▾</a></li>
+        <li><a href="app-info.html">App Info</a></li>
+      </ul>
+      <div class="footer-actions">
+        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">App Download</a>
+        <a href="terms.html" class="btn btn-blue active">Terms and Conditions</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-copy-bar">
+  <div class="container">
+    <div class="footer-copy-inner">
+      <p>© 2026, My Recommendation. All Rights Reserved.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  ham.addEventListener('click', () => mob.classList.toggle('open'));
+
+  // Tab switching
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabSections = document.querySelectorAll('.legal-section');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tabSections.forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
