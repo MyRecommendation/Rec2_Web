@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Recommendation – Find Trusted Service Professionals Near You</title>
-  <meta name="description" content="Discover and recommend bartenders, yoga instructors, nail technicians, and more near you. Download the REC app." />
+  <title>Who We Are – My Recommendation</title>
+  <meta name="description" content="Learn about the people and mission behind My Recommendation — the app built to help you discover and recognize great service professionals." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Reset ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
-    /* ── Tokens ────────────────────────────────────────── */
     :root {
       --blue:       #5b73e8;
       --blue-dark:  #4a60d5;
@@ -50,7 +47,7 @@
       padding: 0 var(--pad);
     }
 
-    /* ── BUTTONS ───────────────────────────────────────── */
+    /* ── BUTTONS ─────────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -79,14 +76,8 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
-    .btn-outline-white {
-      background: transparent;
-      color: var(--white);
-      border: 2px solid var(--white);
-    }
-    .btn-outline-white:hover { background: rgba(255,255,255,0.12); }
 
-    /* ── HEADER / NAV ──────────────────────────────────── */
+    /* ── HEADER / NAV ────────────────────────────────── */
     header {
       position: sticky;
       top: 0;
@@ -102,33 +93,11 @@
       height: 72px;
       gap: 1rem;
     }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+    .nav-left { display: flex; align-items: center; gap: 14px; }
     .nav-logo-img { height: 44px; width: auto; }
-    .nav-brand {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-    }
-    .nav-dl-btn {
-      font-size: 14px !important;
-      padding: 10px 22px !important;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-    }
+    .nav-right { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-dl-btn { font-size: 14px !important; padding: 10px 22px !important; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links > li > a {
       font-size: 15px;
       font-weight: 600;
@@ -140,7 +109,6 @@
     }
     .nav-links > li > a:hover,
     .nav-links > li > a.active { color: var(--green); }
-    /* dropdown */
     .nav-links > li { position: relative; }
     .nav-links > li > ul {
       display: none;
@@ -152,7 +120,7 @@
       border-radius: var(--radius-sm);
       min-width: 230px;
       list-style: none;
-      padding: 12px 0 0.5rem;
+      padding: 0.5rem 0;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
     .nav-links > li:hover > ul { display: block; }
@@ -166,12 +134,10 @@
       transition: background 0.15s, color 0.15s;
     }
     .nav-links > li > ul > li > a:hover { background: var(--blue-light); color: var(--blue); }
-    /* social icons in nav */
     .nav-socials { display: flex; align-items: center; gap: 14px; }
     .nav-socials a { color: var(--body-text); font-size: 20px; transition: color 0.2s; display: flex; }
     .nav-socials a:hover { color: var(--green); }
     .nav-socials svg { width: 22px; height: 22px; fill: currentColor; }
-    /* hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -182,7 +148,6 @@
       padding: 4px;
     }
     .hamburger span { display: block; width: 24px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
-    /* mobile menu */
     .mobile-menu {
       display: none;
       flex-direction: column;
@@ -201,18 +166,17 @@
     .mobile-menu a:last-of-type { border-bottom: none; }
     .mobile-menu a:hover { color: var(--blue); }
     .mobile-menu a.sub { padding-left: 1.25rem; font-size: 14px; font-weight: 500; }
-    .mobile-menu .mob-cta {
-      margin-top: 1rem;
-      text-align: center;
-    }
+    .mobile-menu .mob-cta { margin-top: 1rem; text-align: center; }
 
-    /* ── HERO ──────────────────────────────────────────── */
-    .hero-wrap {
+    /* ── PAGE HERO ───────────────────────────────────── */
+    .about-hero {
       background: linear-gradient(160deg, #eef0fd 0%, #f4f5fb 60%, #ffffff 100%);
+      padding: clamp(3.5rem, 8vw, 6rem) 0;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .hero-wrap::before {
+    .about-hero::before {
       content: '';
       position: absolute;
       top: -80px; right: -80px;
@@ -221,238 +185,216 @@
       background: rgba(91,115,232,0.06);
       pointer-events: none;
     }
-    .hero-wrap::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: 20%;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      background: rgba(91,115,232,0.04);
-      pointer-events: none;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-      padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+    .about-hero-inner {
       position: relative;
       z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
     }
-    .hero-download-top {
-      margin-bottom: 1.5rem;
+    .about-hero-label {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.25rem;
     }
-    .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3rem);
+    .about-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
       font-weight: 800;
-      font-style: italic;
       color: var(--navy);
       line-height: 1.15;
       letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
-    .hero-sub {
+    .about-hero p {
       font-size: clamp(15px, 2vw, 17px);
       color: var(--body-text);
-      line-height: 1.7;
-      max-width: 420px;
-      margin-bottom: 2rem;
-    }
-    .hero-img-col {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-    }
-    .hero-img-col img {
-      width: 100%;
-      max-width: 480px;
-      border-radius: var(--radius);
-      object-fit: cover;
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto 2rem;
     }
 
-    /* ── HOW IT WORKS ──────────────────────────────────── */
-    .how-section {
-      background: var(--blue);
-      padding: clamp(3rem, 7vw, 5rem) 0;
+    /* ── STORY SECTION ───────────────────────────────── */
+    .story-section {
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      background: var(--white);
     }
-    .how-section h2 {
+    .story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .story-img img {
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      border: 4px solid var(--green);
+    }
+    .story-text h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .story-text p {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .story-text p:last-of-type { margin-bottom: 1.75rem; }
+
+    /* ── VALUES SECTION ──────────────────────────────── */
+    .values-section {
+      background: var(--blue);
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      text-align: center;
+    }
+    .values-section h2 {
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: 800;
       color: var(--white);
-      text-align: center;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
     }
-    .how-steps-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.2rem;
-      margin-bottom: 2.5rem;
+    .values-section .section-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 3rem;
     }
-    .how-steps-list li {
-      color: rgba(255,255,255,0.95);
-      font-size: 17px;
-      font-weight: 700;
-    }
-    .how-cards {
+    .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
-      margin-bottom: 2.5rem;
     }
-    .how-card {
+    .value-card {
       background: var(--white);
       border-radius: var(--radius);
       padding: 2rem 1.75rem;
+      text-align: left;
       transition: transform 0.2s;
     }
-    .how-card:hover { transform: translateY(-4px); }
-    .how-card-icon {
-      width: 52px; height: 52px;
+    .value-card:hover { transform: translateY(-4px); }
+    .value-icon {
+      width: 50px; height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 1.25rem;
+      font-size: 24px;
     }
-    .how-card-icon img { width: 100%; height: 100%; object-fit: contain; }
-    .how-card h3 {
+    .value-icon-green { background: rgba(34,199,122,0.12); }
+    .value-icon-blue  { background: rgba(91,115,232,0.12); }
+    .value-icon-navy  { background: rgba(15,27,61,0.08); }
+    .value-card h3 {
       font-size: 17px;
       font-weight: 800;
       color: var(--navy);
       margin-bottom: 0.5rem;
     }
-    .how-card p {
+    .value-card p {
       font-size: 14px;
       color: var(--body-text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
-    .how-cta { text-align: center; }
 
-    /* ── POPULAR CATEGORIES ────────────────────────────── */
-    .categories-section {
-      background: var(--white);
+    /* ── MISSION BANNER ──────────────────────────────── */
+    .mission-section {
       padding: clamp(3rem, 7vw, 5rem) 0;
+      background: var(--light-bg);
     }
-    .categories-inner {
+    .mission-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
+      gap: clamp(2.5rem, 5vw, 5rem);
       align-items: center;
     }
-    .cat-img-col {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cat-circle {
-      position: absolute;
-      width: 70%;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: var(--green);
-      left: 5%;
-      z-index: 0;
-    }
-    .cat-img-col img {
-      position: relative;
-      z-index: 1;
-      width: 85%;
-      object-fit: contain;
-    }
-    .cat-text h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    .mission-text h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.3rem);
       font-weight: 800;
       color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-    .cat-label {
-      font-size: 14px;
-      color: var(--body-text);
+      line-height: 1.2;
       margin-bottom: 1.25rem;
     }
-    .cat-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-      margin-bottom: 2rem;
+    .mission-text p {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.8;
+      margin-bottom: 1rem;
     }
-    .cat-list li {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .cat-list li::before {
-      content: '•';
-      color: var(--green);
-      font-size: 18px;
-      line-height: 1;
+    .mission-text p:last-of-type { margin-bottom: 0; }
+    .mission-img img {
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      aspect-ratio: 4/3;
     }
 
-    /* ── DOWNLOAD CTA ──────────────────────────────────── */
-    .download-section {
-      padding: clamp(2rem, 5vw, 4rem) 0;
+    /* ── CTA ─────────────────────────────────────────── */
+    .about-cta-section {
+      padding: 0;
+      background: var(--white);
     }
-    .download-inner {
+    .about-cta-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      border-radius: var(--radius);
-      overflow: hidden;
-      min-height: 300px;
+      min-height: 380px;
     }
-    .download-left {
+    .about-cta-left {
       background: var(--blue);
       padding: clamp(2.5rem, 5vw, 4rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 1rem;
+      position: relative;
+      overflow: hidden;
     }
-    .download-left h2 {
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    .about-cta-left::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+    .about-cta-left h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-weight: 800;
       color: var(--white);
       line-height: 1.2;
+      position: relative;
+      z-index: 1;
     }
-    .download-left p {
+    .about-cta-left p {
       font-size: 15px;
       color: rgba(255,255,255,0.8);
       line-height: 1.65;
       max-width: 380px;
+      position: relative;
+      z-index: 1;
     }
-    .download-right {
-      background: #e8e8e8;
+    .about-cta-left .btn { position: relative; z-index: 1; }
+    .about-cta-right {
       overflow: hidden;
+      background: #e8e8e8;
     }
-    .download-right img {
+    .about-cta-right img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    /* ── SUPPORT ───────────────────────────────────────── */
-    .support-section {
-      background: var(--white);
-      padding: clamp(3rem, 7vw, 5rem) 0;
-      text-align: center;
-    }
-    .support-section h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 0.75rem;
-    }
-    .support-section p {
-      font-size: 16px;
-      color: var(--body-text);
-      max-width: 480px;
-      margin: 0 auto 2rem;
-      line-height: 1.65;
-    }
-
-    /* ── MAILING LIST ──────────────────────────────────── */
+    /* ── MAILING LIST ────────────────────────────────── */
     .mailing-section {
       background: var(--light-bg);
       padding: clamp(3rem, 6vw, 4.5rem) 0;
@@ -489,7 +431,7 @@
     .mailing-form input:focus { border-color: var(--blue); }
     .mailing-form input::placeholder { color: #aab0c8; }
 
-    /* ── FOOTER ────────────────────────────────────────── */
+    /* ── FOOTER ──────────────────────────────────────── */
     .footer-brand-bar {
       background: var(--white);
       border-top: 1px solid var(--border);
@@ -502,17 +444,9 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .footer-brand-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    .footer-brand-left { display: flex; align-items: center; gap: 12px; }
     .footer-brand-left img { height: 40px; width: auto; }
-    .footer-brand-name {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--navy);
-    }
+    .footer-brand-name { font-size: 1.1rem; font-weight: 800; color: var(--navy); }
     .footer-email {
       display: flex;
       align-items: center;
@@ -531,15 +465,9 @@
       flex-shrink: 0;
     }
     .footer-email-icon svg { width: 16px; height: 16px; fill: white; }
-    .footer-social-ig a {
-      color: var(--body-text);
-      display: flex;
-      align-items: center;
-      transition: color 0.2s;
-    }
+    .footer-social-ig a { color: var(--body-text); display: flex; align-items: center; transition: color 0.2s; }
     .footer-social-ig a:hover { color: var(--green); }
     .footer-social-ig svg { width: 24px; height: 24px; fill: currentColor; }
-
     .footer-nav-bar {
       background: var(--light-bg);
       border-top: 1px solid var(--border);
@@ -552,13 +480,7 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .footer-nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
-      flex-wrap: wrap;
-    }
+    .footer-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; flex-wrap: wrap; }
     .footer-nav-links a {
       font-size: 14px;
       font-weight: 600;
@@ -572,11 +494,7 @@
     .footer-nav-links .active { color: var(--green); }
     .footer-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
     .footer-actions .btn { font-size: 14px; padding: 11px 24px; }
-
-    .footer-copy-bar {
-      background: var(--blue);
-      padding: 1rem 0;
-    }
+    .footer-copy-bar { background: var(--blue); padding: 1rem 0; }
     .footer-copy-inner {
       display: flex;
       align-items: center;
@@ -584,37 +502,23 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .footer-copy-inner p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.85);
-    }
+    .footer-copy-inner p { font-size: 13px; color: rgba(255,255,255,0.85); }
 
-    /* ── RESPONSIVE ────────────────────────────────────── */
+    /* ── RESPONSIVE ──────────────────────────────────── */
     @media (max-width: 860px) {
       .nav-right { display: none; }
       .hamburger { display: flex; }
 
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-sub { max-width: 100%; }
-      .hero-img-col { justify-content: center; }
-      .hero-img-col img { max-width: 380px; }
-
-      .how-cards { grid-template-columns: 1fr; }
-
-      .categories-inner { grid-template-columns: 1fr; }
-      .cat-img-col { max-width: 420px; margin: 0 auto; }
-
-      .download-inner { grid-template-columns: 1fr; }
-      .download-right { min-height: 240px; }
+      .story-inner  { grid-template-columns: 1fr; }
+      .values-grid  { grid-template-columns: 1fr; }
+      .mission-inner { grid-template-columns: 1fr; }
+      .about-cta-inner { grid-template-columns: 1fr; }
+      .about-cta-right { min-height: 240px; }
 
       .footer-brand-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
       .footer-nav-inner { flex-direction: column; align-items: flex-start; }
       .footer-copy-inner { flex-direction: column; }
     }
-
     @media (max-width: 540px) {
       .mailing-form { flex-direction: column; }
       .mailing-form input { width: 100%; }
@@ -626,7 +530,7 @@
 </head>
 <body>
 
-<!-- ── HEADER ─────────────────────────────────────────── -->
+<!-- ── HEADER ─────────────────────────────────────────────── -->
 <header>
   <nav class="container">
     <div class="nav-left">
@@ -635,7 +539,7 @@
 
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li>
           <a href="our-services.html">Our Services ▾</a>
           <ul>
@@ -646,7 +550,7 @@
           </ul>
         </li>
         <li><a href="app-info.html">App Info</a></li>
-        <li><a href="about-us.html">Who We Are</a></li>
+        <li><a href="about-us.html" class="active">Who We Are</a></li>
       </ul>
 
       <div class="nav-socials">
@@ -681,127 +585,102 @@
   </div>
 </header>
 
-<!-- ── HERO ────────────────────────────────────────────── -->
+<!-- ── MAIN ────────────────────────────────────────────────── -->
 <main>
-  <div class="hero-wrap">
+
+  <!-- Hero -->
+  <section class="about-hero">
     <div class="container">
-      <div class="hero">
-        <div class="hero-text">
-          <h1>Discover and Recommend Great People</h1>
-          <p class="hero-sub">
-            Helping people discover and recognize great service professionals — while helping professionals grow their visibility and community.
-          </p>
-          <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">Get the App Now</a>
-        </div>
-        <div class="hero-img-col">
-          <img
-            src="images/home/yogainstructor.jpg.webp"
-            alt="Person using the REC app on a yoga mat"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── HOW IT WORKS ──────────────────────────────────── -->
-  <section class="how-section">
-    <div class="container">
-      <h2>How the REC App Works</h2>
-      <ul class="how-steps-list">
-        <li> &nbsp; Find Great People</li>
-        <li> &nbsp; Recommend Somebody</li>
-        <li> &nbsp; Earn Recognition</li>
-      </ul>
-
-      <div class="how-cards">
-        <div class="how-card">
-          <div class="how-card-icon">
-            <img src="images/shared/find-great-people.webp" alt="" />
-          </div>
-          <h3>Find Great People</h3>
-          <p>Search recommended professionals near you.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-card-icon">
-            <img src="images/shared/recommend-sombody.webp" alt="" />
-          </div>
-          <h3>Recommend Somebody</h3>
-          <p>Recognize great service and share your experience.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-card-icon">
-            <img src="images/shared/enr-recognition.webp" alt="" />
-          </div>
-          <h3>Earn Recognition</h3>
-          <p>Top professionals earn Bronze, Silver, and Gold status.</p>
-        </div>
-      </div>
-
-      <div class="how-cta">
-        <a href="about-us.html" class="btn btn-white">See Who We Are</a>
+      <div class="about-hero-inner">
+        <span class="about-hero-label">Our Story</span>
+        <h1>It's All About the People</h1>
+        <p>My Recommendation was built on a simple belief — great experiences come from great people, not just great places. We created a platform where communities can recognize and share the talented individuals who make their lives better every day.</p>
+        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">Get the App</a>
       </div>
     </div>
   </section>
 
-  <!-- ── POPULAR CATEGORIES ────────────────────────────── -->
-  <section class="categories-section">
+  <!-- Our Story -->
+  <section class="story-section">
     <div class="container">
-      <div class="categories-inner">
-        <div class="cat-img-col">
-          <div class="cat-circle"></div>
-          <img
-            src="images/home/popular-categories.webp"
-            alt="Yoga instructor meditating"
-          />
+      <div class="story-inner">
+        <div class="story-img">
+          <img src="images/our-services/nailtechnician.webp" alt="Nail technician at work" />
         </div>
-        <div class="cat-text">
-          <h2>Popular Categories</h2>
-          <p class="cat-label">Popular on REC</p>
-          <ul class="cat-list">
-            <li>Yoga Instructors</li>
-            <li>Personal Trainers</li>
-            <li>Pilates Instructors</li>
-            <li>Bartenders</li>
-            <li>Golf Beverage Cart Staff</li>
-            <li>Nail Technicians</li>
-          </ul>
-          <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">Download the REC App</a>
+        <div class="story-text">
+          <h2>Why We Built My Recommendation</h2>
+          <p>Have you ever tried to find a great hair stylist or nail technician and realized it's nearly impossible? You search online, read generic reviews, and still end up gambling on a stranger. The truth is, the best professionals are found through word of mouth — through people who actually know and trust them.</p>
+          <p>That's the gap we set out to close. My Recommendation is a community-driven app where real people recommend the service professionals they genuinely love. Whether it's a yoga instructor who changed your life, a bartender who makes every event a hit, or a personal trainer who helped you reach your goals — the REC app gives them the recognition they deserve.</p>
+          <a href="app-info.html" class="btn btn-blue">See How It Works</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── DOWNLOAD CTA ──────────────────────────────────── -->
-  <section class="download-section">
+  <!-- Our Values -->
+  <section class="values-section">
     <div class="container">
-      <div class="download-inner">
-        <div class="download-left">
-          <h2>Download the Rec App</h2>
-          <p>Ready to Discover Great People? Download the REC App — available now on the Apple App Store.</p>
-          <div>
-            <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-white">Download the Rec app</a>
+      <h2>What We Stand For</h2>
+      <p class="section-sub">Three principles guide everything we build</p>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon value-icon-green">
+            <img src="images/shared/find-great-people.webp" alt="" style="width:28px;height:28px;object-fit:contain;" />
           </div>
+          <h3>Community First</h3>
+          <p>We believe trust is built person to person. Every recommendation on REC comes from a real community member who has experienced that professional firsthand — no paid reviews, no bots.</p>
         </div>
-        <div class="download-right">
-          <img
-            src="images/home/near-download-rec-app-section.jpg"
-            alt="Service professional at work"
-          />
+        <div class="value-card">
+          <div class="value-icon value-icon-blue">
+            <img src="images/shared/recommend-sombody.webp" alt="" style="width:28px;height:28px;object-fit:contain;" />
+          </div>
+          <h3>Recognition Matters</h3>
+          <p>Great work deserves recognition. Our Bronze, Silver, and Gold status system ensures the best professionals get the visibility and opportunities they've earned through genuine excellence.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon value-icon-navy">
+            <img src="images/shared/enr-recognition.webp" alt="" style="width:28px;height:28px;object-fit:contain;" />
+          </div>
+          <h3>Empowering Professionals</h3>
+          <p>We give service providers the tools to own their story — a profile, photos, social links, and a schedule — so they can grow their business on their own terms.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SUPPORT ───────────────────────────────────────── -->
-  <section class="support-section">
+  <!-- Our Mission -->
+  <section class="mission-section">
     <div class="container">
-      <h2>We're Here for You</h2>
-      <p>Have questions or feedback? Connect with us now. Our team is here to assist you promptly.</p>
-      <a href="mailto:support@myrecommendation.com" class="btn btn-blue">Talk to Our Support Team</a>
+      <div class="mission-inner">
+        <div class="mission-text">
+          <h2>Our Mission</h2>
+          <p>My Recommendation exists to bridge the gap between talented service professionals and the people who need them most. We want every great yoga instructor, bartender, personal trainer, and nail technician to have a platform that showcases who they truly are.</p>
+          <p>For the people searching, we want to make finding a trusted professional as easy as asking a friend. For the professionals building a career, we want to give them a community that grows with them.</p>
+          <p>We're not just an app — we're a movement to recognize and celebrate the people who make everyday experiences extraordinary.</p>
+        </div>
+        <div class="mission-img">
+          <img src="images/our-services/GettyImages-1134890323.jpg" alt="Person using My Recommendation on their phone" />
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ── MAILING LIST ──────────────────────────────────── -->
+  <!-- CTA -->
+  <section class="about-cta-section">
+    <div class="about-cta-inner">
+      <div class="about-cta-left">
+        <h2>Join Our Community Today</h2>
+        <p>Download the REC app and start discovering the great people around you — or share yours with the world. Available now on the Apple App Store.</p>
+        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-white">Download the REC App</a>
+      </div>
+      <div class="about-cta-right">
+        <img src="images/home/near-download-rec-app-section.jpg" alt="Service professional at work" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mailing List -->
   <section class="mailing-section">
     <div class="container">
       <h2>Join Our Mailing List</h2>
@@ -812,11 +691,10 @@
       </form>
     </div>
   </section>
+
 </main>
 
-<!-- ── FOOTER ─────────────────────────────────────────── -->
-
-<!-- Row 1: Logo / Email / Instagram -->
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <div class="footer-brand-bar">
   <div class="container">
     <div class="footer-brand-inner">
@@ -838,17 +716,14 @@
   </div>
 </div>
 
-<!-- Row 2: Nav links / App Download + Terms buttons -->
 <div class="footer-nav-bar">
   <div class="container">
     <div class="footer-nav-inner">
       <ul class="footer-nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li>
-          <a href="our-services.html">Our Services ▾</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-services.html">Our Services ▾</a></li>
         <li><a href="app-info.html">App Info</a></li>
-        <li><a href="about-us.html">Who We Are</a></li>
+        <li><a href="about-us.html" class="active">Who We Are</a></li>
       </ul>
       <div class="footer-actions">
         <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">App Download</a>
@@ -858,7 +733,6 @@
   </div>
 </div>
 
-<!-- Row 3: Copyright bar -->
 <div class="footer-copy-bar">
   <div class="container">
     <div class="footer-copy-inner">
