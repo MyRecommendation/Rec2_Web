@@ -28,20 +28,22 @@
         <li>
           <a href="${b}our-services.html"${active(isServices)}>Our Services <span style="font-size:9px;vertical-align:middle;">&#9660;</span></a>
           <ul>
-            <li><a href="${b}services/yoga-instructor.html">Yoga Instructor Page</a></li>
-            <li><a href="${b}services/nail-technician.html">Nail Technician Page</a></li>
-            <li><a href="${b}services/bartender.html">Bartender Page</a></li>
-            <li><a href="${b}services/golf-cart.html">Golf Beverage Cart Attendant</a></li>
+            <li><a href="${b}services/beauty-services.html">Beauty Services</a></li>
+            <li><a href="${b}services/fitness.html">Fitness</a></li>
+            <li><a href="${b}services/sports.html">Sports</a></li>
+            <li><a href="${b}services/real-estate.html">Real Estate</a></li>
+            <li><a href="${b}services/legal-services.html">Legal Services</a></li>
+            <li><a href="${b}services/other.html">Other</a></li>
           </ul>
         </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
         <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
       </ul>
       <div class="nav-socials">
-        <a href="https://www.tiktok.com/@myrecommendation57" aria-label="TikTok">${tikTok}</a>
-        <a href="https://www.instagram.com/myrecommendationapp" aria-label="Instagram">${ig}</a>
+        <a href="https://www.tiktok.com/@myrecommendationapp?_r=1&_t=ZP-978GpXikBrj" target="_blank" aria-label="TikTok">${tikTok}</a>
+        <a href="https://www.instagram.com/myrecommendationapp" target="_blank" aria-label="Instagram">${ig}</a>
       </div>
-      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue nav-dl-btn">Download App</a>
+      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue nav-dl-btn">Download App</a>
     </div>
     <button class="hamburger" id="ham" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -50,66 +52,75 @@
   <div class="mobile-menu" id="mob">
     <a href="${b}index.html">Home</a>
     <a href="${b}our-services.html">Our Services</a>
-    <a href="${b}services/yoga-instructor.html" class="sub">&#8250; Yoga Instructors</a>
-    <a href="${b}services/nail-technician.html" class="sub">&#8250; Nail Technicians</a>
-    <a href="${b}services/bartender.html" class="sub">&#8250; Bartenders</a>
-    <a href="${b}services/golf-cart.html" class="sub">&#8250; Golf Cart Attendants</a>
+    <a href="${b}services/beauty-services.html" class="sub">&#8250; Beauty Services</a>
+    <a href="${b}services/fitness.html" class="sub">&#8250; Fitness</a>
+    <a href="${b}services/sports.html" class="sub">&#8250; Sports</a>
+    <a href="${b}services/real-estate.html" class="sub">&#8250; Real Estate</a>
+    <a href="${b}services/legal-services.html" class="sub">&#8250; Legal Services</a>
+    <a href="${b}services/other.html" class="sub">&#8250; Other</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
-      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue" style="width:100%;justify-content:center;">Download App</a>
+      <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue" style="width:100%;justify-content:center;">Download App</a>
     </div>
   </div>
 </header>`;
 
   document.getElementById('site-footer').outerHTML = `
-<div class="footer-brand-bar">
+<footer class="footer">
   <div class="container">
-    <div class="footer-brand-inner">
-      <div class="footer-brand-left">
-        <img src="${b}images/shared/logo.webp" alt="REC app icon" />
+    <div class="footer-grid">
+      <div class="footer-col-brand">
+        <a href="${b}index.html">
+          <img class="footer-logo" src="${b}images/shared/logo.webp" alt="REC app icon" />
+        </a>
+        <p class="footer-desc">Discover and recommend top local service professionals in your community.</p>
+        <div class="footer-socials">
+          <a href="https://www.tiktok.com/@myrecommendationapp?_r=1&_t=ZP-978GpXikBrj" target="_blank" aria-label="TikTok">${tikTok}</a>
+          <a href="https://www.instagram.com/myrecommendationapp" target="_blank" aria-label="Instagram">${ig}</a>
+        </div>
       </div>
-      <a href="mailto:support@myrecommendation.com" class="footer-email">
-        <div class="footer-email-icon">${email}</div>
-        support@myrecommendation.com
-      </a>
-      <div class="footer-social-ig">
-        <a href="https://www.instagram.com/myrecommendationapp" aria-label="Instagram">${ig}</a>
+      
+      <div class="footer-col-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="${b}index.html">Home</a></li>
+          <li><a href="${b}about-us.html">Who We Are</a></li>
+          <li><a href="${b}app-info.html">App Info</a></li>
+          <li><a href="${b}terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col-links">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="${b}our-services.html">Our Services</a></li>
+          <li><a href="${b}services/beauty-services.html">Beauty Services</a></li>
+          <li><a href="${b}services/fitness.html">Fitness</a></li>
+          <li><a href="${b}services/sports.html">Sports</a></li>
+          <li><a href="${b}services/real-estate.html">Real Estate</a></li>
+          <li><a href="${b}services/legal-services.html">Legal Services</a></li>
+          <li><a href="${b}services/other.html">Other</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col-contact">
+        <h3>Contact</h3>
+        <a href="mailto:support@myrecommendation.com" class="footer-email-link">
+          <span class="footer-email-icon">${email}</span>
+          support@myrecommendation.com
+        </a>
+        <div class="footer-cta-buttons">
+          <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue footer-dl-btn">Download App</a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="footer-nav-bar">
-  <div class="container">
-    <div class="footer-nav-inner">
-      <ul class="footer-nav-links">
-        <li><a href="${b}index.html"${active(isHome)}>Home</a></li>
-        <li>
-          <a href="${b}our-services.html"${active(isServices)}>Our Services <span style="font-size:9px;vertical-align:middle;">&#9650;</span></a>
-          <ul>
-            <li><a href="${b}services/yoga-instructor.html">Yoga Instructor Page</a></li>
-            <li><a href="${b}services/nail-technician.html">Nail Technician Page</a></li>
-            <li><a href="${b}services/bartender.html">Bartender Page</a></li>
-            <li><a href="${b}services/golf-cart.html">Golf Beverage Cart Attendant</a></li>
-          </ul>
-        </li>
-        <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
-        <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
-      </ul>
-      <div class="footer-actions">
-        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">App Download</a>
-        <a href="${b}terms.html" class="btn btn-blue">Terms and Conditions</a>
-      </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 My Recommendation. All Rights Reserved.</p>
     </div>
   </div>
-</div>
-<div class="footer-copy-bar">
-  <div class="container">
-    <div class="footer-copy-inner">
-      <p>&#169; 2026, My Recommendation. All Rights Reserved.</p>
-    </div>
-  </div>
-</div>`;
+</footer>`;
 
   document.getElementById('ham').addEventListener('click', function () {
     document.getElementById('mob').classList.toggle('open');
