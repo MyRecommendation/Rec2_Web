@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -49,14 +49,15 @@
       color: var(--navy);
       line-height: 1.15;
       letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+      margin-bottom: 1.75rem;
     }
     .hero-sub {
-      font-size: clamp(15px, 2vw, 17px);
+      font-size: clamp(16px, 2.2vw, 19px);
+      font-weight: 600;
       color: var(--body-text);
-      line-height: 1.7;
-      max-width: 420px;
-      margin-bottom: 2rem;
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
     }
     .hero-img-col { display: flex; justify-content: flex-end; align-items: flex-end; }
     .hero-img-col img { width: 100%; max-width: 480px; border-radius: var(--radius); object-fit: cover; }
@@ -132,70 +133,268 @@
     </div>
   </div>
 
+
+  <!-- ── HOW IT WORKS ──────────────────────────────────── -->
   <section class="how-section">
     <div class="container">
       <h2>How the REC App Works</h2>
       <div class="how-cards">
         <div class="how-card">
-          <div class="how-card-icon"><img src="images/shared/find-great-people.webp" alt="" /></div>
+          <div class="how-card-icon"><img src="images/shared/find-great-people.webp" alt="Find Great People Icon" /></div>
           <h3>Find Great People</h3>
           <p>Search recommended professionals near you.</p>
         </div>
         <div class="how-card">
-          <div class="how-card-icon"><img src="images/shared/recommend-sombody.webp" alt="" /></div>
+          <div class="how-card-icon"><img src="images/shared/recommend-sombody.webp" alt="Recommend Somebody Icon" /></div>
           <h3>Recommend Somebody</h3>
           <p>Recognize great service and share your experience.</p>
         </div>
         <div class="how-card">
-          <div class="how-card-icon"><img src="images/shared/enr-recognition.webp" alt="" /></div>
+          <div class="how-card-icon"><img src="images/shared/enr-recognition.webp" alt="Earn Recognition Icon" /></div>
           <h3>Earn Recognition</h3>
           <p>Top professionals earn Bronze, Silver, and Gold status.</p>
         </div>
       </div>
       <div class="how-cta">
-        <a href="about-us.html" class="btn btn-white">See Who We Are</a>
+        <a href="about-us.html" class="btn btn-white">See Who We Are &rarr;</a>
       </div>
     </div>
   </section>
 
+  <!-- ── WHY CHOOSE REC (BENEFITS) ─────────────────────── -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2>Why Choose REC?</h2>
+      <p class="benefits-sub">A trusted ecosystem designed for both customers and service providers.</p>
+      <div class="benefits-grid">
+        <div class="benefits-column">
+          <h3>For Customers</h3>
+          <div class="benefits-list">
+            <div class="benefit-card">
+              <span class="benefit-icon">🔍</span>
+              <div class="benefit-text">
+                <h4>Discover Trusted Local Experts</h4>
+                <p>Find highly-recommended professionals in your neighborhood, verified by real community members.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <span class="benefit-icon">🛡️</span>
+              <div class="benefit-text">
+                <h4>Avoid Unreliable Referrals</h4>
+                <p>Say goodbye to fake reviews, sponsored listings, and anonymous ratings. Get transparent feedback from local fans.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <span class="benefit-icon">🗣️</span>
+              <div class="benefit-text">
+                <h4>Community-Driven Decisions</h4>
+                <p>Make confident choices based on gold, silver, and bronze badges awarded directly by customers like you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="benefits-column">
+          <h3>For Service Providers</h3>
+          <div class="benefits-list">
+            <div class="benefit-card">
+              <span class="benefit-icon">📈</span>
+              <div class="benefit-text">
+                <h4>Increase Your Visibility</h4>
+                <p>Stand out in your community and let your top-notch service speak for itself through a professional profile.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <span class="benefit-icon">🎖️</span>
+              <div class="benefit-text">
+                <h4>Earn Trust &amp; Status</h4>
+                <p>Turn word-of-mouth client appreciation into visible credibility with Bronze, Silver, and Gold badges.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <span class="benefit-icon">👥</span>
+              <div class="benefit-text">
+                <h4>Build a Loyal Client Base</h4>
+                <p>Connect with local customers who value quality, responsiveness, and genuine peer recommendations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── POPULAR CATEGORIES ────────────────────────────── -->
   <section class="categories-section">
     <div class="container">
-      <div class="categories-inner">
-        <div class="cat-img-col">
-          <div class="cat-circle"></div>
-          <img src="images/home/popular-categories.webp" alt="Yoga instructor meditating" />
+      <h2>Popular Categories</h2>
+      <p class="cat-label" style="text-align:center; margin-bottom: 2rem;">Discover top-rated experts across our primary service divisions</p>
+      <div class="popular-categories-grid">
+        <a href="services/beauty-services.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 15 the 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+          </div>
+          <h3>Beauty Services</h3>
+          <p>Nail Technicians, Hair Stylists, Lash Experts</p>
+        </a>
+        <a href="services/fitness.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14 4.14 5.57 2 7.71 3.43 9.14 2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22 14.86 20.57 16.29 22 18.43 19.86 19.86 21.29 21.29 19.86 19.86 18.43 22 16.29z"/></svg>
+          </div>
+          <h3>Fitness</h3>
+          <p>Yoga Instructors, Personal Trainers, Pilates coaches</p>
+        </a>
+        <a href="services/sports.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+          </div>
+          <h3>Sports</h3>
+          <p>Beverage Cart Attendants, Golf Pros, Court Coaches</p>
+        </a>
+        <a href="services/real-estate.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          </div>
+          <h3>Real Estate</h3>
+          <p>Agents, Leasing Agents, Property Brokers</p>
+        </a>
+        <a href="services/legal-services.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2v1h7v2h-1.93c-.1 2.75-2.22 4.96-4.94 5.07L14 12v3h4v2h-4v3h-4v-3H6v-2h4v-3l-.13-.03c-2.72-.11-4.84-2.32-4.94-5.07H3V5h7V4c0-1.1.9-2 2-2zm4.07 5H7.93c.09 1.63 1.34 2.92 2.97 2.99L11 10.01V7h-1v1.5h-1V7h-1.07c.07 1.05.86 1.89 1.89 1.97L11 9.01h2c1.03-.02 1.82-.86 1.89-1.91L15 7h-1.07l.07.03c1.03.08 1.82.92 1.89 1.97H15v-1.5h-1V7zm-8.14 0h8.14H7.93z"/></svg>
+          </div>
+          <h3>Legal Services</h3>
+          <p>Attorneys, CPAs, Financial Specialists</p>
+        </a>
+        <a href="services/other.html" class="pop-cat-card">
+          <div class="pop-cat-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+          <h3>Other Services</h3>
+          <p>Bartenders, Waitstaff, Managers, Event Staff</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCAL RECOMMENDATIONS (TESTIMONIALS) ───────────── -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Local Recommendations in Action</h2>
+      <p class="testimonials-sub">Real reviews and achievement badges earned by top local professionals on REC</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <img class="test-medal" src="images/our-services/medal_gold.png" alt="Gold Badge" />
+          <div>
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">"Since receiving a Gold Badge on REC, my appointment requests have increased significantly. The platform has helped me reach new customers."</p>
+          </div>
+          <div class="test-user">
+            <img class="test-avatar" src="images/our-services/nailtechnician.webp" alt="Jessica M. Avatar" />
+            <div class="test-info">
+              <h4>Jessica M.</h4>
+              <p>Nail Technician &bull; Gold Tier</p>
+            </div>
+          </div>
         </div>
-        <div class="cat-text">
-          <h2>Popular Categories</h2>
-          <p class="cat-label">Popular on REC</p>
-          <ul class="cat-list">
-            <li>Yoga Instructors</li>
-            <li>Personal Trainers</li>
-            <li>Pilates Instructors</li>
-            <li>Bartenders</li>
-            <li>Golf Beverage Cart Staff</li>
-            <li>Nail Technicians</li>
-          </ul>
+        
+        <div class="testimonial-card">
+          <img class="test-medal" src="images/our-services/medal_silver.png" alt="Silver Badge" />
+          <div>
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">"My students love recommending my sessions here. It's a positive space that rewards real effort and teaching consistency."</p>
+          </div>
+          <div class="test-user">
+            <img class="test-avatar" src="images/our-services/yogainstructor.webp" alt="David K. Avatar" />
+            <div class="test-info">
+              <h4>David K.</h4>
+              <p>Yoga Instructor &bull; Silver Tier</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <img class="test-medal" src="images/our-services/medal_bronze.png" alt="Bronze Badge" />
+          <div>
+            <div class="test-rating">★★★★★</div>
+            <p class="test-text">"REC has been an awesome tool. Regulars at the course recommend me to their friends, building a solid base of repeat golfers."</p>
+          </div>
+          <div class="test-user">
+            <img class="test-avatar" src="images/our-services/whistler-golfing-beverages.jpg" alt="Sarah L. Avatar" />
+            <div class="test-info">
+              <h4>Sarah L.</h4>
+              <p>Golf Cart Attendant &bull; Bronze Tier</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ── DOWNLOAD CTA ──────────────────────────────────── -->
   <section class="download-section">
-    <div class="download-inner">
-      <div class="download-left">
-        <h2>Download the Rec App</h2>
-        <p>Ready to Discover Great People? Download the REC App — available now on the Apple App Store.</p>
-        <div>
-          <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-white">Download the Rec app</a>
+    <div class="container">
+      <div class="download-inner">
+        <div class="download-left">
+          <h2>Download the Rec App</h2>
+          <p>Ready to Discover Great People? Download the REC App — available now on the Apple App Store.</p>
+          <div>
+            <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-white">Download the Rec app</a>
+          </div>
         </div>
-      </div>
-      <div class="download-right">
-        <img src="images/home/near-download-rec-app-section.jpg" alt="Service professional at work" />
+        <div class="download-right">
+          <img src="images/home/near-download-rec-app-section.jpg" alt="Service professional at work" />
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ── FREQUENTLY ASKED QUESTIONS (FAQ) ──────────────── -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="faq-sub">Everything you need to know about using My Recommendation</p>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>Is REC free to use?</h3>
+            <span class="faq-icon">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, downloading and using REC is completely free. Both customers looking for top-rated professionals and service providers looking to build their community presence can use the platform at no cost.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>How do Gold, Silver, and Bronze badges work?</h3>
+            <span class="faq-icon">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Recognition badges are milestone achievement awards given to professionals based on genuine recommendations and positive ratings submitted by their real community clients. Gold is the highest tier, reflecting maximum trust and confidence.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>How can I find professionals in a specific category?</h3>
+            <span class="faq-icon">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can easily browse categories (Beauty Services, Fitness, Sports, etc.) on the platform, filter based on location, or search directly for specific skills and names to find the best provider near you.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>Can businesses join REC?</h3>
+            <span class="faq-icon">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, service professionals, local businesses, and independent service providers can create profiles on REC to showcase their services, highlight client reviews, and display badges earned through exceptional client delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUPPORT ───────────────────────────────────────── -->
   <section class="support-section">
     <div class="container">
       <h2>We're Here for You</h2>
@@ -203,21 +402,34 @@
       <a href="mailto:support@myrecommendation.com" class="btn btn-blue">Talk to Our Support Team</a>
     </div>
   </section>
-
-  <section class="mailing-section">
-    <div class="container">
-      <h2>Join Our Mailing List</h2>
-      <form class="mailing-form" action="mailto:support@myrecommendation.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Name*" required />
-        <input type="email" name="Email" placeholder="Email*" required />
-        <button type="submit" class="btn btn-blue">Subscribe!</button>
-      </form>
-    </div>
-  </section>
 </main>
 
 <div id="site-footer"></div>
 
 <script src="components.js"></script>
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const answer = item.querySelector('.faq-answer');
+      
+      // Close other open items
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+        }
+      });
+      
+      item.classList.toggle('active');
+      
+      if (item.classList.contains('active')) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      } else {
+        answer.style.maxHeight = '0';
+      }
+    });
+  });
+</script>
 </body>
 </html>

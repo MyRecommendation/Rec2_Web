@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -16,9 +16,15 @@
     .app-hero-text h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; }
     .app-hero-text p { font-size: 15px; color: var(--body-text); line-height: 1.75; }
 
-    .carousel-section { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--white); text-align: center; }
-    .carousel-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--navy); line-height: 1.25; margin-bottom: 2.5rem; }
-    .carousel-wrap { position: relative; max-width: 360px; margin: 0 auto; }
+    .carousel-section { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--white); }
+    .carousel-section-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .carousel-section-text { text-align: left; }
+    .carousel-intro { font-size: 15px; color: var(--body-text); line-height: 1.75; margin-bottom: 2rem; }
+    .carousel-features { display: flex; flex-direction: column; gap: 1rem; }
+    .feature-item { font-size: 14px; line-height: 1.6; color: var(--body-text); padding-left: 1.5rem; position: relative; }
+    .feature-item::before { content: '✓'; color: var(--green); font-weight: bold; position: absolute; left: 0; top: 0; }
+    .carousel-wrap-container { display: flex; justify-content: center; align-items: center; width: 100%; }
+    .carousel-wrap { position: relative; width: 100%; max-width: 360px; }
     .carousel-track { overflow: hidden; border-radius: var(--radius); }
     .carousel-slides { display: flex; transition: transform 0.4s ease; }
     .carousel-slide { min-width: 100%; }
@@ -61,6 +67,8 @@
 
     @media (max-width: 860px) {
       .app-hero-inner { grid-template-columns: 1fr; }
+      .carousel-section-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .carousel-section-text { text-align: center; }
       .get-started-inner { grid-template-columns: 1fr; }
       .get-started-right { min-height: 260px; }
       .carousel-btn-prev { left: -12px; }
@@ -89,23 +97,44 @@
 
   <section class="carousel-section">
     <div class="container">
-      <h2>Introducing My Recommendation:<br>A Visual Journey Through Our World</h2>
-      <div class="carousel-wrap">
-        <div class="carousel-track">
-          <div class="carousel-slides" id="slides">
-            <div class="carousel-slide"><img src="images/app-info/Recom.jpg.webp" alt="Recommend — find recommendations of top notch people" /></div>
-            <div class="carousel-slide"><img src="images/app-info/Engage.jpg.webp" alt="Engage — in the activity of the best people in each industry" /></div>
-            <div class="carousel-slide"><img src="images/app-info/Discover.jpg.webp" alt="Discover — people near you and filter for better results" /></div>
-            <div class="carousel-slide"><img src="images/app-info/Build.jpg.webp" alt="Build — your network of recommendations" /></div>
+      <div class="carousel-section-inner">
+        <div class="carousel-section-text">
+          <h2>Introducing My Recommendation:<br>A Visual Journey Through Our World</h2>
+          <p class="carousel-intro">Our app provides a clean, visual interface to manage all of your recommendations and discovery needs. Swipe through the highlights to see how REC makes connecting with top-notch professionals a breeze.</p>
+          <div class="carousel-features">
+            <div class="feature-item">
+              <strong>Recommend:</strong> Find and share recommendations of top-notch people.
+            </div>
+            <div class="feature-item">
+              <strong>Engage:</strong> Participate in the activity of the best people in each industry.
+            </div>
+            <div class="feature-item">
+              <strong>Discover:</strong> Filter and find trusted professionals near you.
+            </div>
+            <div class="feature-item">
+              <strong>Build:</strong> Grow your personal network of trusted recommendations.
+            </div>
           </div>
         </div>
-        <button class="carousel-btn carousel-btn-prev" id="prev" aria-label="Previous">&#8592;</button>
-        <button class="carousel-btn carousel-btn-next" id="next" aria-label="Next">&#8594;</button>
-        <div class="carousel-dots" id="dots">
-          <button class="carousel-dot active" data-index="0"></button>
-          <button class="carousel-dot" data-index="1"></button>
-          <button class="carousel-dot" data-index="2"></button>
-          <button class="carousel-dot" data-index="3"></button>
+        <div class="carousel-wrap-container">
+          <div class="carousel-wrap">
+            <div class="carousel-track">
+              <div class="carousel-slides" id="slides">
+                <div class="carousel-slide"><img src="images/app-info/Recom.jpg.webp" alt="Recommend — find recommendations of top notch people" /></div>
+                <div class="carousel-slide"><img src="images/app-info/Engage.jpg.webp" alt="Engage — in the activity of the best people in each industry" /></div>
+                <div class="carousel-slide"><img src="images/app-info/Discover.jpg.webp" alt="Discover — people near you and filter for better results" /></div>
+                <div class="carousel-slide"><img src="images/app-info/Build.jpg.webp" alt="Build — your network of recommendations" /></div>
+              </div>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" id="prev" aria-label="Previous">&#8592;</button>
+            <button class="carousel-btn carousel-btn-next" id="next" aria-label="Next">&#8594;</button>
+            <div class="carousel-dots" id="dots">
+              <button class="carousel-dot active" data-index="0"></button>
+              <button class="carousel-dot" data-index="1"></button>
+              <button class="carousel-dot" data-index="2"></button>
+              <button class="carousel-dot" data-index="3"></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,17 +154,6 @@
       <div class="get-started-right">
         <img src="images/our-services/GettyImages-1134890323.jpg" alt="Person using smartphone outdoors" />
       </div>
-    </div>
-  </section>
-
-  <section class="mailing-section">
-    <div class="container">
-      <h2>Join Our Mailing List</h2>
-      <form class="mailing-form" action="mailto:support@myrecommendation.com" method="post" enctype="text/plain">
-        <input type="text" name="Name" placeholder="Name*" required />
-        <input type="email" name="Email" placeholder="Email*" required />
-        <button type="submit" class="btn btn-blue">Subscribe!</button>
-      </form>
     </div>
   </section>
 </main>
