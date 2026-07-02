@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Spotlight – My Recommendation</title>
+  <meta name="description" content="Meet the real professionals featured on the REC app — people building communities through skill, dedication, and genuine human connection." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://myrecommendation.com/spotlight.html" />
+  <meta property="og:title" content="Professional Spotlight – My Recommendation" />
+  <meta property="og:description" content="Meet the real professionals featured on the REC app — people building communities through skill, dedication, and genuine human connection." />
+  <meta property="og:image" content="https://myrecommendation.com/images/shared/logo.webp" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Professional Spotlight – My Recommendation" />
+  <meta name="twitter:description" content="Meet the real professionals featured on the REC app — people building communities through skill, dedication, and genuine human connection." />
+  <meta name="twitter:image" content="https://myrecommendation.com/images/shared/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Hero ─────────────────────────────────────────────── */
+    .spotlight-hero {
+      background: linear-gradient(160deg, #eef0fd 0%, #f4f5fb 60%, #ffffff 100%);
+      padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-hero::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 420px; height: 420px; border-radius: 50%;
+      background: rgba(91,115,232,0.06); pointer-events: none;
+    }
+    .spotlight-hero::after {
+      content: ''; position: absolute; bottom: -60px; left: 10%;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(34,199,122,0.05); pointer-events: none;
+    }
+    .spotlight-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .spotlight-label {
+      display: inline-block;
+      background: var(--blue-light); color: var(--blue);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: var(--radius-pill); margin-bottom: 1.25rem;
+    }
+    .spotlight-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; font-style: italic;
+      color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem;
+    }
+    .spotlight-hero p {
+      font-size: clamp(15px, 2vw, 17px); color: var(--body-text);
+      line-height: 1.75; max-width: 560px; margin: 0 auto 2.5rem;
+    }
+    .hero-instructor-count {
+      display: flex; align-items: center; justify-content: center; gap: 2rem;
+      flex-wrap: wrap; margin-bottom: 2rem;
+    }
+    .hero-count-item { text-align: center; }
+    .hero-count-num { font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; }
+    .hero-count-label { font-size: 13px; font-weight: 600; color: var(--body-text); margin-top: 2px; }
+    .hero-count-divider { width: 1px; height: 40px; background: var(--border); }
+
+    /* ── Instructor Section ───────────────────────────────── */
+    .instructor-section {
+      padding: clamp(4rem, 8vw, 6rem) 0;
+      position: relative;
+    }
+    .instructor-section:nth-child(odd) { background: var(--white); }
+    .instructor-section:nth-child(even) { background: var(--light-bg); }
+
+    .instructor-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .instructor-inner.reverse { direction: rtl; }
+    .instructor-inner.reverse > * { direction: ltr; }
+
+    /* Photo mosaic */
+    .instructor-photos {
+      position: relative;
+    }
+    .photo-mosaic {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .photo-mosaic .photo-main {
+      grid-row: 1 / 3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      border: 3px solid var(--green);
+    }
+    .photo-mosaic .photo-main img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .photo-mosaic .photo-side {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+    }
+    .photo-mosaic .photo-side img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .photo-badge {
+      position: absolute;
+      bottom: 18px; left: 18px;
+      background: var(--white);
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.14);
+      font-weight: 700; font-size: 13px; color: var(--navy);
+      white-space: nowrap;
+    }
+    .photo-badge-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0;
+    }
+    .photo-badge-dot.gold { background: #d4a017; }
+
+    /* Bio content */
+    .instructor-bio { }
+    .instructor-eyebrow {
+      display: inline-block;
+      background: rgba(34,199,122,0.12); color: #14a062;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: var(--radius-pill); margin-bottom: 1rem;
+    }
+    .instructor-bio h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; font-style: italic;
+      color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem;
+    }
+    .instructor-bio .bio-text {
+      font-size: 15px; color: var(--body-text); line-height: 1.8; margin-bottom: 1.5rem;
+    }
+    .specialty-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.75rem;
+    }
+    .specialty-tag {
+      background: var(--blue-light); color: var(--blue);
+      font-size: 13px; font-weight: 700;
+      padding: 6px 14px; border-radius: var(--radius-pill);
+    }
+    .instructor-meta {
+      display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.5rem;
+    }
+    .instructor-meta-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 600; color: var(--body-text);
+    }
+    .instructor-meta-row svg { width: 15px; height: 15px; fill: var(--blue); flex-shrink: 0; }
+    .instructor-gold-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fdf6e3; border: 1.5px solid #d4a017; color: #9a7206;
+      font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: var(--radius-pill);
+      margin-bottom: 1.25rem;
+    }
+    .instructor-gold-badge svg { width: 14px; height: 14px; fill: #d4a017; }
+    .instructor-links {
+      display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+    }
+    .instructor-link-website {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 700; color: var(--body-text);
+      border: 2px solid var(--border); border-radius: var(--radius-pill);
+      padding: 10px 20px; transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .instructor-link-website:hover { border-color: var(--blue); color: var(--blue); }
+    .instructor-link-website svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── Section divider ──────────────────────────────────── */
+    .section-divider {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: var(--light-bg);
+    }
+    .divider-line {
+      height: 1px; background: var(--border);
+      max-width: 200px; margin: 0 auto;
+    }
+
+    /* ── Placeholder instructor ──────────────────────────── */
+    .placeholder-tag {
+      background: rgba(91,115,232,0.1); color: var(--blue);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: var(--radius-pill); margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* ── CTA ─────────────────────────────────────────────── */
+    .spotlight-cta { padding: 0; }
+    .spotlight-cta-inner {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 340px;
+    }
+    .spotlight-cta-left {
+      background: var(--blue); padding: clamp(2.5rem, 6vw, 5rem);
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: flex-start; gap: 1rem;
+      position: relative; overflow: hidden;
+    }
+    .spotlight-cta-left::before {
+      content: ''; position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); pointer-events: none;
+    }
+    .spotlight-cta-left h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: var(--white); line-height: 1.2; position: relative; z-index: 1; }
+    .spotlight-cta-left p { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.65; max-width: 360px; position: relative; z-index: 1; }
+    .spotlight-cta-left .btn { position: relative; z-index: 1; }
+    .spotlight-cta-right { overflow: hidden; background: #e8e8e8; }
+    .spotlight-cta-right img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .instructor-inner { grid-template-columns: 1fr; }
+      .instructor-inner.reverse { direction: ltr; }
+      .photo-mosaic { max-width: 420px; margin: 0 auto; }
+      .spotlight-cta-inner { grid-template-columns: 1fr; }
+      .spotlight-cta-right { min-height: 220px; }
+      .hero-instructor-count { gap: 1.25rem; }
+      .hero-count-divider { display: none; }
+    }
+    @media (max-width: 560px) {
+      .photo-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+      .photo-mosaic .photo-main { grid-column: 1 / 3; grid-row: auto; aspect-ratio: 16/9; border-radius: var(--radius); }
+      .photo-mosaic .photo-side { aspect-ratio: 1/1; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="spotlight-hero">
+    <div class="container">
+      <div class="spotlight-hero-inner">
+        <span class="spotlight-label">Professional Spotlight</span>
+        <h1>Real People. Real Impact.</h1>
+        <p>Meet the professionals featured on the REC app — dedicated people who show up every day to serve their communities with skill, care, and genuine expertise.</p>
+        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">Find on REC</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JAZMINE ───────────────────────────────────────────── -->
+  <section class="instructor-section">
+    <div class="container">
+      <div class="instructor-inner">
+
+        <div class="instructor-photos">
+          <div class="photo-mosaic">
+            <div class="photo-main">
+              <img src="images/instructor-photos/1.png" alt="Jazmine demonstrating a yoga balance pose outdoors" />
+            </div>
+            <div class="photo-side">
+              <img src="images/instructor-photos/2.png" alt="Jazmine in a meditative pose" />
+            </div>
+            <div class="photo-side">
+              <img src="images/instructor-photos/3.png" alt="Jazmine strength training in the studio" />
+            </div>
+          </div>
+          <div class="photo-badge">
+            <span class="photo-badge-dot gold"></span>
+            Gold Badge · REC
+          </div>
+        </div>
+
+        <div class="instructor-bio">
+          <span class="instructor-eyebrow">Yoga · Ritual Underground</span>
+          <h2>Jazmine</h2>
+          <div class="instructor-gold-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Gold Badge on REC
+          </div>
+          <p class="bio-text">
+            Yoga teacher. HR professional. Ritual guide. Jazmine supports people through movement, stress, and the complexity of being human — helping them build practices that actually stick.
+          </p>
+          <p class="bio-text">
+            Based at Ritual Underground in Carol Stream, IL, she teaches yoga classes that blend mindful movement with real-life grounding. Her sessions are a space to come back to — not just a workout, but a ritual.
+          </p>
+          <div class="specialty-tags">
+            <span class="specialty-tag">Yoga Teacher</span>
+            <span class="specialty-tag">Ritual Guide</span>
+            <span class="specialty-tag">HR Professional</span>
+            <span class="specialty-tag">Movement Coach</span>
+          </div>
+          <div class="instructor-meta">
+            <div class="instructor-meta-row">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Carol Stream, IL · Ritual Underground
+            </div>
+            <div class="instructor-meta-row">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              Wed 9:30 AM · Thu 10:00 AM · Fri 2:00 PM
+            </div>
+          </div>
+          <div class="instructor-links">
+            <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-blue">Find on REC</a>
+            <a href="https://ritualunderground.com/" target="_blank" rel="noopener noreferrer" class="instructor-link-website">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              ritualunderground.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────────── -->
+  <section class="spotlight-cta">
+    <div class="spotlight-cta-inner">
+      <div class="spotlight-cta-left">
+        <h2>Know a Great Professional?</h2>
+        <p>The best people are found through real community recommendations. Download the REC app and help the professionals you trust get the recognition they deserve.</p>
+        <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" class="btn btn-white">Get the REC App</a>
+      </div>
+      <div class="spotlight-cta-right">
+        <img src="images/instructor-photos/6.png" alt="Fitness instructor in action" />
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="components.js"></script>
+</body>
+</html>
