@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isInstructors = p.includes('spotlight') || /\/(paulina|jazmin-esparza|sam)\.html$/.test(p);
+  const isInstructors = p.includes('spotlight') || /\/(paulina|jazmin-esparza|sam|chris-cundari)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
 
@@ -56,6 +56,7 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}jazmin-esparza.html">Jazmin Esparza</a></li>
             <li><a href="${b}paulina.html">Paulina</a></li>
             <li><a href="${b}sam.html">Sam</a></li>
+            <li><a href="${b}chris-cundari.html">Chris Cundari</a></li>
           </ul>
         </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
@@ -84,6 +85,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}jazmin-esparza.html" class="sub">&#8250; Jazmin Esparza</a>
     <a href="${b}paulina.html" class="sub">&#8250; Paulina</a>
     <a href="${b}sam.html" class="sub">&#8250; Sam</a>
+    <a href="${b}chris-cundari.html" class="sub">&#8250; Chris Cundari</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
