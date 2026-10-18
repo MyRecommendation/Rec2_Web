@@ -110,6 +110,7 @@ gtag('config', 'G-9Q5V3WNLRG');
         <ul>
           <li><a href="${b}index.html">Home</a></li>
           <li><a href="${b}about-us.html">Who We Are</a></li>
+          <li><a href="${b}index.html#for-instructors-and-studios">For Instructors &amp; Studios</a></li>
           <li><a href="${b}app-info.html">App Info</a></li>
           <li><a href="${b}terms.html">Terms & Conditions</a></li>
         </ul>
@@ -151,10 +152,34 @@ gtag('config', 'G-9Q5V3WNLRG');
   });
 })();
 
-// Measure App Store link clicks separately from completed installs.
-document.addEventListener('click', function (event) {
-  const link = event.target.closest && event.target.closest('a[href]');
-  if (link && link.hostname === 'apps.apple.com' && typeof gtag === 'function') {
-    gtag('event', 'app_store_click', { link_url: link.href, page_path: location.pathname });
+// Measure discovery and booking intent. These events do not confirm a reservation.
+(function () {
+  const profile = document.querySelector('main[data-instructor-id]');
+  const instructorId = profile ? profile.dataset.instructorId : 'none';
+  function track(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, Object.assign({page_path: location.pathname, instructor_id: instructorId}, params));
+    }
   }
-});
+  if (profile) track('instructor_profile_view', {});
+  function handleLink(event) {
+    const link = event.target.closest && event.target.closest('a[href]');
+    if (!link) return;
+    const placement = link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'page_content';
+    if (link.dataset.recBooking) {
+      track('studio_booking_click', {
+        studio_id: link.dataset.recBooking,
+        link_url: link.origin + link.pathname,
+        link_placement: placement
+      });
+    } else if (link.hostname === 'apps.apple.com') {
+      track('app_store_click', {link_url: link.origin + link.pathname, link_placement: placement});
+    } else if (link.dataset.recInquiry === 'partnership') {
+      track('partnership_inquiry_click', {link_placement: placement});
+    }
+  }
+  document.addEventListener('click', handleLink);
+  document.addEventListener('auxclick', function (event) {
+    if (event.button === 1) handleLink(event);
+  });
+})();
