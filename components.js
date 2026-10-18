@@ -49,7 +49,14 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}services/other.html">Other</a></li>
           </ul>
         </li>
-        <li><a href="${b}spotlight.html"${active(isInstructors)}>Spotlight</a></li>
+        <li>
+          <a href="${b}spotlight.html"${active(isInstructors)}>Spotlight <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
+          <ul aria-label="Instructor spotlights">
+            <li><a href="${b}spotlight.html">All Spotlights</a></li>
+            <li><a href="${b}jazmin-esparza.html">Jazmin Esparza</a></li>
+            <li><a href="${b}paulina.html">Paulina</a></li>
+          </ul>
+        </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
         <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
       </ul>
@@ -73,6 +80,8 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}services/legal-services.html" class="sub">&#8250; Legal Services</a>
     <a href="${b}services/other.html" class="sub">&#8250; Other</a>
     <a href="${b}spotlight.html">Spotlight</a>
+    <a href="${b}jazmin-esparza.html" class="sub">&#8250; Jazmin Esparza</a>
+    <a href="${b}paulina.html" class="sub">&#8250; Paulina</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">

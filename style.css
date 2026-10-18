@@ -145,7 +145,8 @@ nav {
   transition: opacity 0.15s, visibility 0.15s;
   transition-delay: 0s;
 }
-.nav-links > li:hover > ul {
+.nav-links > li:hover > ul,
+.nav-links > li:focus-within > ul {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
