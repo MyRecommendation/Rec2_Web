@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isInstructors = p.includes('spotlight');
+  const isInstructors = p.includes('spotlight') || /\/(paulina|jazmin-esparza)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
 
