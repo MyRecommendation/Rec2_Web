@@ -880,3 +880,19 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
+/* Local discovery and genuine community recommendations */
+.local-discovery { padding: clamp(2.5rem, 5vw, 4rem) 0; background: var(--light-bg, #f6f8fc); }
+.local-discovery h2 { color: var(--navy); font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+.local-discovery p, .local-discovery li { max-width: 850px; color: var(--body-text); line-height: 1.8; margin-bottom: 1rem; }
+.local-discovery ol { padding-left: 1.5rem; margin-top: 1rem; }
+.local-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 1.5rem 0; }
+.local-links a, .recommendation-source summary { color: var(--blue); font-weight: 700; }
+.real-recommendation h3 { color: var(--navy); font-size: 1.2rem; margin-bottom: .4rem; }
+.recommendation-role, .recommendation-byline, .recommendation-note { color: var(--body-text); font-size: .875rem; line-height: 1.6; }
+.real-recommendation .test-text { margin-top: 1.2rem; font-size: 1rem; }
+.recommendation-source { margin-top: 1.25rem; }
+.recommendation-source summary { cursor: pointer; line-height: 1.6; }
+.recommendation-source img { width: 100%; height: auto; display: block; margin-top: 1rem; border-radius: .5rem; }
+.single-recommendation { max-width: 760px; margin: 0 auto 1rem; }
+.recommendation-note { text-align: center; }

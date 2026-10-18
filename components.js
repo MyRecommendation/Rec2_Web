@@ -141,3 +141,11 @@ gtag('config', 'G-9Q5V3WNLRG');
     document.getElementById('mob').classList.toggle('open');
   });
 })();
+
+// Measure App Store link clicks separately from completed installs.
+document.addEventListener('click', function (event) {
+  const link = event.target.closest && event.target.closest('a[href]');
+  if (link && link.hostname === 'apps.apple.com' && typeof gtag === 'function') {
+    gtag('event', 'app_store_click', { link_url: link.href, page_path: location.pathname });
+  }
+});
