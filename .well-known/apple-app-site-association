@@ -1,0 +1,33 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "WW8UR4L4F5.com.mayank.rec",
+          "WW8UR4L4F5.com.rec.app"
+        ],
+        "components": [
+          {
+            "/": "/u/*",
+            "comment": "Matches user profile share links — https://myrecommendation.com/u/:username"
+          }
+        ]
+      },
+      {
+        "appID": "WW8UR4L4F5.com.mayank.rec",
+        "paths": ["/u/*"]
+      },
+      {
+        "appID": "WW8UR4L4F5.com.rec.app",
+        "paths": ["/u/*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "WW8UR4L4F5.com.mayank.rec",
+      "WW8UR4L4F5.com.rec.app"
+    ]
+  }
+}
