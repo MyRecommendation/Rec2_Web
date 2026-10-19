@@ -72,7 +72,7 @@ gtag('config', 'G-9Q5V3WNLRG');
       </div>
       <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue nav-dl-btn">Download App</a>
     </div>
-    <button class="hamburger" id="ham" aria-label="Toggle menu">
+    <button class="hamburger" id="ham" aria-label="Toggle menu" aria-controls="mob" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -160,7 +160,8 @@ gtag('config', 'G-9Q5V3WNLRG');
 </footer>`;
 
   document.getElementById('ham').addEventListener('click', function () {
-    document.getElementById('mob').classList.toggle('open');
+    const open = document.getElementById('mob').classList.toggle('open');
+    this.setAttribute('aria-expanded', String(open));
   });
 })();
 

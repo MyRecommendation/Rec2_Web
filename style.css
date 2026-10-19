@@ -186,9 +186,15 @@ nav {
   flex-direction: column;
   background: var(--white);
   border-top: 1px solid var(--border);
-  padding: 1rem var(--pad) 1.5rem;
+  padding: 1rem var(--pad) calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  max-height: calc(100vh - 72px);
+  max-height: calc(100dvh - 72px);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open { display: flex; }
+.mobile-menu > * { flex-shrink: 0; }
 .mobile-menu a {
   padding: 0.7rem 0;
   font-size: 15px;
