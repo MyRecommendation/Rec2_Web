@@ -210,7 +210,9 @@ gtag('config', 'G-9Q5V3WNLRG');
     const link = event.target.closest && event.target.closest('a[href]');
     if (!link) return;
     const placement = link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'page_content';
-    if (link.dataset.recBooking) {
+    if (link.dataset.recInstructor) {
+      track('instructor_spotlight_click', {destination_instructor_id: link.dataset.recInstructor, link_placement: placement});
+    } else if (link.dataset.recBooking) {
       track('studio_booking_click', {
         studio_id: link.dataset.recBooking,
         link_url: link.origin + link.pathname,
