@@ -183,18 +183,25 @@ nav {
 /* Mobile menu */
 .mobile-menu {
   display: none;
-  flex-direction: column;
+  position: fixed;
+  top: var(--mobile-menu-top, 72px);
+  left: 0;
+  right: 0;
+  height: var(--mobile-menu-height, calc(100dvh - 72px));
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
   background: var(--white);
   border-top: 1px solid var(--border);
-  padding: 1rem var(--pad) calc(1.5rem + env(safe-area-inset-bottom, 0px));
-  max-height: calc(100vh - 72px);
-  max-height: calc(100dvh - 72px);
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
+  padding: 1rem var(--pad) calc(2rem + env(safe-area-inset-bottom, 0px));
+  z-index: 101;
 }
-.mobile-menu.open { display: flex; }
-.mobile-menu > * { flex-shrink: 0; }
+.mobile-menu.open { display: block; }
+.mobile-menu > a { display: block; }
+@media (min-width: 861px) { .mobile-menu.open { display: none; } }
 .mobile-menu a {
   padding: 0.7rem 0;
   font-size: 15px;

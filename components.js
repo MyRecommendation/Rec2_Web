@@ -159,10 +159,41 @@ gtag('config', 'G-9Q5V3WNLRG');
   </div>
 </footer>`;
 
-  document.getElementById('ham').addEventListener('click', function () {
-    const open = document.getElementById('mob').classList.toggle('open');
-    this.setAttribute('aria-expanded', String(open));
+  const menuButton = document.getElementById('ham');
+  const mobileMenu = document.getElementById('mob');
+  function sizeMobileMenu() {
+    const top = Math.max(0, menuButton.closest('nav').getBoundingClientRect().bottom);
+    const viewport = window.visualViewport;
+    const bottom = viewport ? viewport.height + viewport.offsetTop : window.innerHeight;
+    mobileMenu.style.setProperty('--mobile-menu-top', top + 'px');
+    mobileMenu.style.setProperty('--mobile-menu-height', Math.max(0, bottom - top) + 'px');
+  }
+  function setMobileMenu(open) {
+    if (open) sizeMobileMenu();
+    mobileMenu.classList.toggle('open', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) mobileMenu.scrollTop = 0;
+  }
+  menuButton.addEventListener('click', function () {
+    setMobileMenu(!mobileMenu.classList.contains('open'));
   });
+  mobileMenu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) setMobileMenu(false);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') setMobileMenu(false);
+  });
+  function resizeMobileMenu() {
+    if (window.innerWidth > 860) setMobileMenu(false);
+    else if (mobileMenu.classList.contains('open')) sizeMobileMenu();
+  }
+  window.addEventListener('resize', resizeMobileMenu);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', resizeMobileMenu);
+    window.visualViewport.addEventListener('scroll', resizeMobileMenu);
+  }
 })();
 
 // Measure discovery and booking intent. These events do not confirm a reservation.
