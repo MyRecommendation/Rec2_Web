@@ -531,26 +531,36 @@
     updateMeta(metaTitle, metaDesc, picUrl || null);
   }
 
-  // Fetch public profile from backend
-  fetch(API_BASE + '/u/' + encodeURIComponent(identifier), {
-    method: 'GET',
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(function (res) {
-    if (!res.ok) { showFallback(identifier); return null; }
-    return res.json();
-  })
-  .then(function (json) {
-    if (!json) return;
-    if (json.status === true && json.data) {
-      populateCard(json.data);
-    } else {
+  function fetchProfile(url, fallbackToNumeric) {
+    fetch(url, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (!res.ok) {
+        if (fallbackToNumeric && /^\d+$/.test(identifier)) {
+          return fetchProfile(API_BASE + '/bx_block_public_profile/get_public_profiles?user_id=' + encodeURIComponent(identifier), false);
+        }
+        showFallback(identifier);
+        return null;
+      }
+      return res.json();
+    })
+    .then(function (json) {
+      if (!json) return;
+      if (json.status === true && json.data) {
+        populateCard(json.data);
+      } else {
+        showFallback(identifier);
+      }
+    })
+    .catch(function () {
       showFallback(identifier);
-    }
-  })
-  .catch(function () {
-    showFallback(identifier);
-  });
+    });
+  }
+
+  // Fetch public profile (falls back to numeric get_public_profiles if applicable)
+  fetchProfile(API_BASE + '/u/' + encodeURIComponent(identifier), true);
 
 })();
 </script>
