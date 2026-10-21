@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isInstructors = p.includes('spotlight') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas)\.html$/.test(p);
+  const isInstructors = p.includes('spotlight') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
 
@@ -61,6 +61,7 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}madison.html">Madison</a></li>
             <li><a href="${b}mel.html">Mel</a></li>
             <li><a href="${b}nataly-vargas.html">Nataly Vargas</a></li>
+            <li><a href="${b}claudine-beeson.html">Claudine Beeson</a></li>
           </ul>
         </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
@@ -94,6 +95,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}madison.html" class="sub">&#8250; Madison</a>
     <a href="${b}mel.html" class="sub">&#8250; Mel</a>
     <a href="${b}nataly-vargas.html" class="sub">&#8250; Nataly Vargas</a>
+    <a href="${b}claudine-beeson.html" class="sub">&#8250; Claudine Beeson</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
