@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix.html');
+  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
@@ -100,6 +100,8 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}claudine-beeson.html" class="sub">&#8250; Claudine Beeson</a>
     <a href="${b}studio-spotlights.html">Studio Spotlights</a>
     <a href="${b}yogasix.html" class="sub">&#8250; YogaSix</a>
+    <a href="${b}yogasix-naperville.html" class="sub">&#8250; YogaSix Naperville</a>
+    <a href="${b}yogasix-downers-grove.html" class="sub">&#8250; YogaSix Downers Grove</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
@@ -212,6 +214,8 @@ gtag('config', 'G-9Q5V3WNLRG');
     }
   }
   if (profile) track('instructor_profile_view', {});
+  const studio = document.querySelector('main[data-studio-id]');
+  if (studio) track('studio_page_view', {studio_id: studio.dataset.studioId});
   function handleLink(event) {
     const link = event.target.closest && event.target.closest('a[href]');
     if (!link) return;
