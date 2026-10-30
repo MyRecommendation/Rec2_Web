@@ -910,3 +910,11 @@ nav {
 .recommendation-source img { width: 100%; height: auto; display: block; margin-top: 1rem; border-radius: .5rem; }
 .single-recommendation { max-width: 760px; margin: 0 auto 1rem; }
 .recommendation-note { text-align: center; }
+/* Studio → YogaSix → location navigation */
+.nav-links .studio-submenu { position:relative; }
+.nav-links .studio-submenu > a { display:flex;justify-content:space-between;gap:1rem; }
+.nav-links .studio-submenu > ul { position:absolute;right:100%;top:0;min-width:240px;list-style:none;padding:.5rem 0;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:0 8px 24px rgba(0,0,0,.1);visibility:hidden;opacity:0;pointer-events:none; }
+.nav-links .studio-submenu:hover > ul,.nav-links .studio-submenu:focus-within > ul { visibility:visible;opacity:1;pointer-events:auto; }
+.nav-links .studio-submenu > ul a { display:block;padding:.65rem 1.2rem;font-size:14px;color:var(--body-text);white-space:nowrap; }
+.nav-links .studio-submenu > ul a:hover,.nav-links .studio-submenu > ul a:focus-visible { background:var(--blue-light);color:var(--blue-dark); }
+.mobile-menu a.sub.sub-location { padding-left:2.5rem; }

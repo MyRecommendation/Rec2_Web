@@ -65,7 +65,19 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}claudine-beeson.html">Claudine Beeson</a></li>
           </ul>
         </li>
-        <li><a href="${b}studio-spotlights.html"${active(isStudios)}>Studio Spotlights</a></li>
+<li>
+          <a href="${b}studio-spotlights.html"${active(isStudios)}>Studio Spotlights <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
+          <ul aria-label="Studio spotlights">
+            <li><a href="${b}studio-spotlights.html">All Studio Spotlights</a></li>
+            <li class="studio-submenu">
+              <a href="${b}yogasix.html">YogaSix <span aria-hidden="true">‹</span></a>
+              <ul aria-label="YogaSix locations">
+                <li><a href="${b}yogasix-naperville.html">YogaSix Naperville</a></li>
+                <li><a href="${b}yogasix-downers-grove.html">YogaSix Downers Grove</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
         <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
       </ul>
@@ -100,8 +112,8 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}claudine-beeson.html" class="sub">&#8250; Claudine Beeson</a>
     <a href="${b}studio-spotlights.html">Studio Spotlights</a>
     <a href="${b}yogasix.html" class="sub">&#8250; YogaSix</a>
-    <a href="${b}yogasix-naperville.html" class="sub">&#8250; YogaSix Naperville</a>
-    <a href="${b}yogasix-downers-grove.html" class="sub">&#8250; YogaSix Downers Grove</a>
+    <a href="${b}yogasix-naperville.html" class="sub sub-location">&#8250; YogaSix Naperville</a>
+    <a href="${b}yogasix-downers-grove.html" class="sub sub-location">&#8250; YogaSix Downers Grove</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
