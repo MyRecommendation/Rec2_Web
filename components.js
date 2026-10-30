@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix');
+  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
@@ -76,6 +76,7 @@ gtag('config', 'G-9Q5V3WNLRG');
                 <li><a href="${b}yogasix-downers-grove.html">YogaSix Downers Grove</a></li>
               </ul>
             </li>
+            <li class="studio-submenu"><a href="${b}shred415.html">SHRED415 <span aria-hidden="true">‹</span></a><ul aria-label="SHRED415 locations"><li><a href="${b}shred415-naperville.html">SHRED415 Naperville</a></li><li><a href="${b}shred415-hinsdale.html">SHRED415 Hinsdale</a></li></ul></li>
           </ul>
         </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
@@ -114,6 +115,9 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}yogasix.html" class="sub">&#8250; YogaSix</a>
     <a href="${b}yogasix-naperville.html" class="sub sub-location">&#8250; YogaSix Naperville</a>
     <a href="${b}yogasix-downers-grove.html" class="sub sub-location">&#8250; YogaSix Downers Grove</a>
+    <a href="${b}shred415.html" class="sub">&#8250; SHRED415</a>
+    <a href="${b}shred415-naperville.html" class="sub sub-location">&#8250; SHRED415 Naperville</a>
+    <a href="${b}shred415-hinsdale.html" class="sub sub-location">&#8250; SHRED415 Hinsdale</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
     <div class="mob-cta">
