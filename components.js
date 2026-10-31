@@ -20,7 +20,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
   const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees');
-  const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani)\.html$/.test(p);
+  const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
 
@@ -67,6 +67,7 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}heather-mccarthy.html">Heather McCarthy</a></li>
             <li><a href="${b}laila-hana.html">Laila Hana</a></li>
             <li><a href="${b}dani.html">Dani</a></li>
+            <li><a href="${b}kristen-richter.html">Kristen Richter</a></li>
           </ul>
         </li>
 <li>
@@ -121,6 +122,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}heather-mccarthy.html" class="sub">&#8250; Heather McCarthy</a>
     <a href="${b}laila-hana.html" class="sub">&#8250; Laila Hana</a>
     <a href="${b}dani.html" class="sub">&#8250; Dani</a>
+    <a href="${b}kristen-richter.html" class="sub">&#8250; Kristen Richter</a>
     <a href="${b}studio-spotlights.html">Studio Spotlights</a>
     <a href="${b}just-be-yoga.html" class="sub">&#8250; Just Be Yoga</a>
     <a href="${b}yoga-by-degrees.html" class="sub">&#8250; Yoga by Degrees</a>
