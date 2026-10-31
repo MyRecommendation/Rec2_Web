@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga');
+  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
@@ -74,6 +74,7 @@ gtag('config', 'G-9Q5V3WNLRG');
           <ul aria-label="Studio spotlights">
             <li><a href="${b}studio-spotlights.html">All Studio Spotlights</a></li>
             <li><a href="${b}just-be-yoga.html">Just Be Yoga</a></li>
+            <li><a href="${b}yoga-by-degrees.html">Yoga by Degrees</a></li>
             <li class="studio-submenu">
               <a href="${b}yogasix.html">YogaSix <span aria-hidden="true">‹</span></a>
               <ul aria-label="YogaSix locations">
@@ -122,6 +123,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}dani.html" class="sub">&#8250; Dani</a>
     <a href="${b}studio-spotlights.html">Studio Spotlights</a>
     <a href="${b}just-be-yoga.html" class="sub">&#8250; Just Be Yoga</a>
+    <a href="${b}yoga-by-degrees.html" class="sub">&#8250; Yoga by Degrees</a>
     <a href="${b}yogasix.html" class="sub">&#8250; YogaSix</a>
     <a href="${b}yogasix-naperville.html" class="sub sub-location">&#8250; YogaSix Naperville</a>
     <a href="${b}yogasix-downers-grove.html" class="sub sub-location">&#8250; YogaSix Downers Grove</a>
