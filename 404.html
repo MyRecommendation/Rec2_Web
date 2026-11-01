@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Base href ensures CSS/images/JS resolve from root even at /u/:id paths -->
+  <base href="/" />
+
+  <!-- SEO: noindex so the dynamic 404 page isn't indexed by crawlers -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Default meta (overwritten by JS when a profile loads) -->
+  <title>Open in Rec – My Recommendation</title>
+  <meta name="description" content="View this profile on the Rec app — My Recommendation." />
+
+  <!-- Open Graph (overwritten dynamically) -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="My Recommendation" />
+  <meta property="og:title" content="Open in Rec – My Recommendation" />
+  <meta property="og:description" content="View this profile on the Rec app." />
+  <meta property="og:image" content="https://myrecommendation.com/images/shared/logo.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Open in Rec – My Recommendation" />
+  <meta name="twitter:description" content="View this profile on the Rec app." />
+  <meta name="twitter:image" content="https://myrecommendation.com/images/shared/logo.webp" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Site-wide stylesheet (root-relative so it works from /u/* paths) -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* ── Layout Shell ──────────────────────────────────────── */
+    html, body { height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main { flex: 1; }
+
+    /* ── Profile Card Page ──────────────────────────────────── */
+    #profile-page {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 8vw, 5rem) var(--pad);
+      background: var(--light-bg);
+      flex: 1;
+    }
+    #profile-page.active { display: flex; }
+
+    .profile-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(15, 27, 61, 0.10);
+      padding: clamp(2rem, 5vw, 3rem);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      animation: fadeUp 0.35s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Avatar */
+    .profile-avatar-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+    .profile-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      display: block;
+    }
+    .profile-avatar-fallback {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--white);
+      border: 3px solid var(--border);
+    }
+    .profile-medal {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .profile-medal.gold   { background: #FFD700; }
+    .profile-medal.silver { background: #C0C0C0; }
+    .profile-medal.bronze { background: #CD7F32; }
+
+    /* Name / Meta */
+    .profile-name {
+      font-size: clamp(1.3rem, 4vw, 1.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .profile-username {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .profile-profession {
+      font-size: 14px;
+      color: var(--body-text);
+      margin-bottom: 0.75rem;
+    }
+    .profile-rec-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.1rem;
+    }
+    .profile-about {
+      font-size: 14px;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      /* Clamp to 3 lines */
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Action buttons */
+    .profile-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-open-app {
+      background: var(--blue);
+      color: var(--white);
+      border-radius: var(--radius-pill);
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(91, 115, 232, 0.35);
+    }
+    .btn-open-app:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(91, 115, 232, 0.45);
+    }
+
+    /* App Store button — styled to look like the official badge feel */
+    .btn-app-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-pill);
+      padding: 13px 28px;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-app-store:hover {
+      background: #1c2e5a;
+      transform: translateY(-2px);
+    }
+    .btn-app-store svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--white);
+      flex-shrink: 0;
+    }
+
+    .profile-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.25rem 0 1rem;
+    }
+    .profile-home-link {
+      font-size: 13px;
+      color: var(--body-text);
+      text-decoration: none;
+    }
+    .profile-home-link:hover { color: var(--blue); }
+
+    /* Skeleton loading state */
+    .skeleton {
+      background: linear-gradient(90deg, #e8ebf4 25%, #f4f5fb 50%, #e8ebf4 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 8px;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skel-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      margin: 0 auto 1.25rem;
+    }
+    .skel-line {
+      height: 16px;
+      margin: 0 auto 10px;
+    }
+
+    /* ── Standard 404 Page ──────────────────────────────────── */
+    #not-found-page {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 8vw, 6rem) var(--pad);
+      flex: 1;
+    }
+    #not-found-page.active { display: flex; }
+
+    .not-found-inner {
+      text-align: center;
+      max-width: 480px;
+    }
+    .not-found-code {
+      font-size: clamp(5rem, 18vw, 9rem);
+      font-weight: 800;
+      color: var(--blue-light);
+      line-height: 1;
+      letter-spacing: -4px;
+      margin-bottom: 0.25rem;
+      position: relative;
+    }
+    .not-found-code::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--blue);
+      border-radius: 2px;
+      margin: 0.5rem auto 0;
+    }
+    .not-found-title {
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin: 1.25rem 0 0.75rem;
+    }
+    .not-found-desc {
+      font-size: 15px;
+      color: var(--body-text);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main>
+  <!-- ── Profile deep-link view ─────────────────────────── -->
+  <section id="profile-page" aria-label="User profile preview">
+    <div class="profile-card" id="profile-card">
+      <!-- Skeleton shown while loading -->
+      <div id="profile-skeleton">
+        <div class="skeleton skel-avatar"></div>
+        <div class="skeleton skel-line" style="width:55%;"></div>
+        <div class="skeleton skel-line" style="width:35%;height:12px;"></div>
+        <div class="skeleton skel-line" style="width:70%;height:12px;margin-top:16px;"></div>
+        <div class="skeleton skel-line" style="width:80%;height:12px;"></div>
+        <div class="skeleton skel-line" style="width:60%;height:12px;"></div>
+        <div class="skeleton skel-line" style="width:100%;height:48px;border-radius:999px;margin-top:24px;"></div>
+        <div class="skeleton skel-line" style="width:100%;height:48px;border-radius:999px;margin-top:12px;"></div>
+      </div>
+
+      <!-- Populated content (hidden until data loads) -->
+      <div id="profile-content" style="display:none;">
+        <div class="profile-avatar-wrap">
+          <img id="profile-img" class="profile-avatar" src="" alt="Profile picture" />
+          <div id="profile-img-fallback" class="profile-avatar-fallback" style="display:none;" aria-hidden="true"></div>
+          <div id="profile-medal" class="profile-medal" style="display:none;" aria-label="Medal"></div>
+        </div>
+        <div class="profile-name" id="profile-name"></div>
+        <div class="profile-username" id="profile-username"></div>
+        <div class="profile-profession" id="profile-profession"></div>
+        <div id="profile-rec-count-wrap" class="profile-rec-count" style="display:none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          <span id="profile-rec-count"></span>
+        </div>
+        <p class="profile-about" id="profile-about" style="display:none;"></p>
+
+        <div class="profile-actions">
+          <a id="btn-open-app" class="btn-open-app" href="javascript:void(0)" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-10 0H2v20h20V2h-4zm-8 0a3 3 0 016 0h-6zM4 4h2v2H4V4zm0 4h16v12H4V8z"/></svg>
+            Open in Rec App
+          </a>
+          <a
+            class="btn-app-store"
+            href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download on the App Store"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on the App Store
+          </a>
+        </div>
+
+        <hr class="profile-divider" />
+        <a href="/" class="profile-home-link">← Explore My Recommendation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Standard 404 view ───────────────────────────────── -->
+  <section id="not-found-page" aria-label="Page not found">
+    <div class="not-found-inner">
+      <div class="not-found-code" aria-hidden="true">404</div>
+      <h1 class="not-found-title">Page Not Found</h1>
+      <p class="not-found-desc">
+        The page you are looking for doesn't exist or may have been moved.<br />
+        Head back to the home page or explore the Rec app.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="/" class="btn btn-blue">Return to Home</a>
+        <a
+          href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-white"
+        >Download Rec App</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<!-- Shared nav/footer (root-relative so it works from /u/* paths) -->
+<script src="/components.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var API_BASE    = 'https://admin.myrecommendation.com';
+  var APP_STORE   = 'https://apps.apple.com/us/app/rec-my-recommendation/id6753791197';
+  // Profile link path pattern
+  var PATH_RE     = /^\/u\/([a-zA-Z0-9_.-]+)\/?$/;
+
+  var pathname    = window.location.pathname;
+  var match       = pathname.match(PATH_RE);
+
+  /* ── Route Decision ─────────────────────────────── */
+  if (!match) {
+    // Not a /u/ path — show standard 404
+    document.getElementById('not-found-page').classList.add('active');
+    document.title = '404 – Page Not Found | My Recommendation';
+    return;
+  }
+
+  // It IS a /u/:identifier path — show the profile card section
+  var identifier  = match[1];
+  var queryStr    = window.location.search; // e.g. ?src=share
+  var deepLink    = 'rec://u/' + identifier + queryStr;
+
+  document.getElementById('profile-page').classList.add('active');
+
+  /* ── Attempt to open the app (mobile only) ──────── */
+  var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    // Small delay so the page renders first, then attempt deep link
+    setTimeout(function () {
+      window.location.href = deepLink;
+    }, 350);
+  }
+
+  /* ── Wire up the "Open in App" button ───────────── */
+  var btnOpen = document.getElementById('btn-open-app');
+  btnOpen.href = deepLink;
+  btnOpen.addEventListener('click', function (e) {
+    // Let the href do the work; no extra logic needed
+  });
+
+  /* ── Fetch profile data from the backend API ─────── */
+  function showFallback(identifier) {
+    hideSkeleton();
+    document.getElementById('profile-img').style.display        = 'none';
+    document.getElementById('profile-img-fallback').style.display = 'flex';
+    document.getElementById('profile-img-fallback').textContent = identifier.charAt(0).toUpperCase();
+    document.getElementById('profile-username').textContent     = '@' + identifier;
+    document.getElementById('profile-name').textContent         = 'Rec Profile';
+    document.getElementById('profile-profession').textContent   = 'View on the Rec App';
+    updateMeta('View @' + identifier + '\'s profile on Rec', 'Check out their recommendations on the My Recommendation app.');
+  }
+
+  function hideSkeleton() {
+    document.getElementById('profile-skeleton').style.display = 'none';
+    document.getElementById('profile-content').style.display  = 'block';
+  }
+
+  function medalEmoji(medal) {
+    if (!medal) return null;
+    var m = medal.toLowerCase();
+    if (m === 'gold')   return { label: '🥇', cls: 'gold' };
+    if (m === 'silver') return { label: '🥈', cls: 'silver' };
+    if (m === 'bronze') return { label: '🥉', cls: 'bronze' };
+    return null;
+  }
+
+  function updateMeta(title, desc, imgUrl) {
+    document.title = title + ' | My Recommendation';
+    var metas = {
+      'og:title':         title,
+      'og:description':   desc,
+      'twitter:title':    title,
+      'twitter:description': desc
+    };
+    if (imgUrl) {
+      metas['og:image']         = imgUrl;
+      metas['twitter:image']    = imgUrl;
+    }
+    Object.keys(metas).forEach(function (prop) {
+      var el = document.querySelector('meta[property="' + prop + '"], meta[name="' + prop + '"]');
+      if (el) el.setAttribute('content', metas[prop]);
+    });
+  }
+
+  function populateCard(data) {
+    hideSkeleton();
+
+    var name        = data.name         || ('Profile @' + identifier);
+    var profession  = data.profession   || data.industry || '';
+    var about       = data.about        || '';
+    var recCount    = data.recommendation_count;
+    var medal       = data.medal        || data.overall_medal;
+    var picUrl      = data.profile_picture_url;
+
+    // Avatar
+    var imgEl       = document.getElementById('profile-img');
+    var fbEl        = document.getElementById('profile-img-fallback');
+    if (picUrl) {
+      imgEl.src       = picUrl;
+      imgEl.alt       = name + '\'s profile picture';
+      imgEl.onerror   = function () { imgEl.style.display = 'none'; fbEl.style.display = 'flex'; fbEl.textContent = name.charAt(0).toUpperCase(); };
+      imgEl.style.display = 'block';
+      fbEl.style.display  = 'none';
+    } else {
+      imgEl.style.display = 'none';
+      fbEl.style.display  = 'flex';
+      fbEl.textContent    = name.charAt(0).toUpperCase();
+    }
+
+    // Medal badge
+    var medalInfo = medalEmoji(medal);
+    if (medalInfo) {
+      var medalEl = document.getElementById('profile-medal');
+      medalEl.textContent   = medalInfo.label;
+      medalEl.className     = 'profile-medal ' + medalInfo.cls;
+      medalEl.style.display = 'flex';
+      medalEl.setAttribute('aria-label', medalInfo.cls + ' medal');
+    }
+
+    // Text fields
+    document.getElementById('profile-name').textContent     = name;
+    document.getElementById('profile-username').textContent = '@' + identifier;
+
+    if (profession) {
+      document.getElementById('profile-profession').textContent = profession;
+    } else {
+      document.getElementById('profile-profession').style.display = 'none';
+    }
+
+    if (recCount > 0) {
+      var countWrap = document.getElementById('profile-rec-count-wrap');
+      document.getElementById('profile-rec-count').textContent = recCount + ' Recommendation' + (recCount === 1 ? '' : 's');
+      countWrap.style.display = 'inline-flex';
+    }
+
+    if (about && about.trim()) {
+      var aboutEl         = document.getElementById('profile-about');
+      aboutEl.textContent = about.trim();
+      aboutEl.style.display = 'block';
+    }
+
+    // Update page meta for social sharing / link previews
+    var metaTitle = name + ' (@' + identifier + ') on Rec';
+    var metaDesc  = profession
+      ? profession + (recCount ? ' · ' + recCount + ' recommendations' : '') + ' — view on Rec.'
+      : 'View recommendations on the Rec app.';
+    updateMeta(metaTitle, metaDesc, picUrl || null);
+  }
+
+  function fetchProfile(url, fallbackToNumeric) {
+    fetch(url, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (!res.ok) {
+        if (fallbackToNumeric && /^\d+$/.test(identifier)) {
+          return fetchProfile(API_BASE + '/bx_block_public_profile/get_public_profiles?user_id=' + encodeURIComponent(identifier), false);
+        }
+        showFallback(identifier);
+        return null;
+      }
+      return res.json();
+    })
+    .then(function (json) {
+      if (!json) return;
+      if (json.status === true && json.data) {
+        populateCard(json.data);
+      } else {
+        showFallback(identifier);
+      }
+    })
+    .catch(function () {
+      showFallback(identifier);
+    });
+  }
+
+  // Fetch public profile (falls back to numeric get_public_profiles if applicable)
+  fetchProfile(API_BASE + '/u/' + encodeURIComponent(identifier), true);
+
+})();
+</script>
+
+</body>
+</html>
