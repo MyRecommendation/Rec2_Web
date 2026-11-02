@@ -40,17 +40,6 @@ gtag('config', 'G-9Q5V3WNLRG');
       <ul class="nav-links">
         <li><a href="${b}index.html"${active(isHome)}>Home</a></li>
         <li>
-          <a href="${b}our-services.html"${active(isServices)}>Our Services <span style="font-size:9px;vertical-align:middle;">&#9660;</span></a>
-          <ul>
-            <li><a href="${b}services/beauty-services.html">Beauty Services</a></li>
-            <li><a href="${b}services/fitness.html">Fitness</a></li>
-            <li><a href="${b}services/sports.html">Sports</a></li>
-            <li><a href="${b}services/real-estate.html">Real Estate</a></li>
-            <li><a href="${b}services/legal-services.html">Legal Services</a></li>
-            <li><a href="${b}services/other.html">Other</a></li>
-          </ul>
-        </li>
-        <li>
           <a href="${b}spotlight.html"${active(isInstructors)}>Instructor Spotlights <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
           <ul aria-label="Instructor spotlights">
             <li><a href="${b}spotlight.html">All Instructor Spotlights</a></li>
@@ -88,6 +77,17 @@ gtag('config', 'G-9Q5V3WNLRG');
         </li>
         <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
         <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
+        <li>
+          <a href="${b}our-services.html"${active(isServices)}>Our Services <span style="font-size:9px;vertical-align:middle;">&#9660;</span></a>
+          <ul>
+            <li><a href="${b}services/fitness.html">Fitness</a></li>
+            <li><a href="${b}services/beauty-services.html">Beauty Services</a></li>
+            <li><a href="${b}services/sports.html">Sports</a></li>
+            <li><a href="${b}services/real-estate.html">Real Estate</a></li>
+            <li><a href="${b}services/legal-services.html">Legal Services</a></li>
+            <li><a href="${b}services/other.html">Other</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="nav-socials">
         <a href="https://www.tiktok.com/@myrecommendationapp?_r=1&_t=ZP-978GpXikBrj" target="_blank" aria-label="TikTok">${tikTok}</a>
@@ -101,13 +101,6 @@ gtag('config', 'G-9Q5V3WNLRG');
   </nav>
   <div class="mobile-menu" id="mob">
     <a href="${b}index.html">Home</a>
-    <a href="${b}our-services.html">Our Services</a>
-    <a href="${b}services/beauty-services.html" class="sub">&#8250; Beauty Services</a>
-    <a href="${b}services/fitness.html" class="sub">&#8250; Fitness</a>
-    <a href="${b}services/sports.html" class="sub">&#8250; Sports</a>
-    <a href="${b}services/real-estate.html" class="sub">&#8250; Real Estate</a>
-    <a href="${b}services/legal-services.html" class="sub">&#8250; Legal Services</a>
-    <a href="${b}services/other.html" class="sub">&#8250; Other</a>
     <a href="${b}spotlight.html">Instructor Spotlights</a>
     <a href="${b}jazmin-esparza.html" class="sub">&#8250; Jazmin Esparza</a>
     <a href="${b}paulina.html" class="sub">&#8250; Paulina</a>
@@ -134,6 +127,13 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}shred415-hinsdale.html" class="sub sub-location">&#8250; SHRED415 Hinsdale</a>
     <a href="${b}app-info.html">App Info</a>
     <a href="${b}about-us.html">Who We Are</a>
+    <a href="${b}our-services.html">Our Services</a>
+    <a href="${b}services/fitness.html" class="sub">&#8250; Fitness</a>
+    <a href="${b}services/beauty-services.html" class="sub">&#8250; Beauty Services</a>
+    <a href="${b}services/sports.html" class="sub">&#8250; Sports</a>
+    <a href="${b}services/real-estate.html" class="sub">&#8250; Real Estate</a>
+    <a href="${b}services/legal-services.html" class="sub">&#8250; Legal Services</a>
+    <a href="${b}services/other.html" class="sub">&#8250; Other</a>
     <div class="mob-cta">
       <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue" style="width:100%;justify-content:center;">Download App</a>
     </div>
