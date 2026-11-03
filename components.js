@@ -19,7 +19,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
   const isAbout       = p.includes('about-us');
-  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates');
+  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates') || p.includes('pure-barre-willowbrook');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter|marlissa-hamgeri)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
@@ -65,7 +65,7 @@ gtag('config', 'G-9Q5V3WNLRG');
           <a href="${b}studio-spotlights.html"${active(isStudios)}>Studio Spotlights <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
           <ul aria-label="Studio spotlights">
             <li><a href="${b}studio-spotlights.html">All Studio Spotlights</a></li>
-            <li><a href="${b}shyft-pilates.html">Shyft Pilates</a></li>
+            <li><a href="${b}shyft-pilates.html">Shyft Pilates</a></li><li><a href="${b}pure-barre-willowbrook.html">Pure Barre Willowbrook</a></li>
             <li><a href="${b}just-be-yoga.html">Just Be Yoga</a></li>
             <li><a href="${b}yoga-by-degrees.html">Yoga by Degrees</a></li>
             <li class="studio-submenu">
@@ -121,7 +121,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}dani.html" class="sub">&#8250; Dani</a>
     <a href="${b}kristen-richter.html" class="sub">&#8250; Kristen Richter</a>
     <a href="${b}studio-spotlights.html">Studio Spotlights</a>
-    <a href="${b}shyft-pilates.html" class="sub">&#8250; Shyft Pilates</a>
+    <a href="${b}shyft-pilates.html" class="sub">&#8250; Shyft Pilates</a><a href="${b}pure-barre-willowbrook.html" class="sub">&#8250; Pure Barre Willowbrook</a>
     <a href="${b}just-be-yoga.html" class="sub">&#8250; Just Be Yoga</a>
     <a href="${b}yoga-by-degrees.html" class="sub">&#8250; Yoga by Degrees</a>
     <a href="${b}yogasix.html" class="sub">&#8250; YogaSix</a>
