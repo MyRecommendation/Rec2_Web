@@ -918,3 +918,27 @@ nav {
 .nav-links .studio-submenu > ul a { display:block;padding:.65rem 1.2rem;font-size:14px;color:var(--body-text);white-space:nowrap; }
 .nav-links .studio-submenu > ul a:hover,.nav-links .studio-submenu > ul a:focus-visible { background:var(--blue-light);color:var(--blue-dark); }
 .mobile-menu a.sub.sub-location { padding-left:2.5rem; }
+
+/* REC clean and modern visual system */
+body{overflow-wrap:break-word}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--blue-dark);outline-offset:4px}
+header{background:#fff;box-shadow:0 4px 24px #0f1b3d06}
+header>nav{height:80px}
+.nav-right{gap:1.2rem;min-width:0}.nav-links{gap:1.25rem}
+.nav-links>li>a{font-size:13px;font-weight:800;min-height:48px}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:var(--blue-dark)}
+.nav-links>li>ul{border:1px solid var(--border);border-radius:14px;padding:.6rem;box-shadow:0 16px 45px #0f1b3d1a}
+.nav-links>li>ul>li>a{border-radius:7px;font-size:13px}
+.nav-links>li:last-child>ul{left:auto;right:0}
+.btn{font-weight:800;border-radius:10px;min-height:48px}
+.btn-blue{background:var(--blue-dark);box-shadow:0 4px 12px #4a60d526}
+.btn-blue:hover{background:#3c50bd;box-shadow:0 7px 18px #4a60d533}
+.nav-dl-btn{min-height:42px}
+.hamburger{width:44px;height:44px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:10px}
+.mobile-menu>a:not(.sub){font-weight:800;color:var(--navy);font-size:16px;padding-top:1rem}
+.footer{background:var(--navy);border-top:0}
+.footer-col-links h3,.footer-col-contact h3{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c5cef6}
+.footer-desc{max-width:280px;line-height:1.8}.footer-email-link{overflow-wrap:anywhere}
+@media(min-width:861px) and (max-width:1120px){.nav-socials{display:none}.nav-links{gap:.9rem}.nav-right{gap:1rem}.nav-links>li>a{font-size:12px}.nav-dl-btn{padding:10px 14px!important}}
+@media(max-width:860px){header>nav{height:72px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
