@@ -30,6 +30,7 @@ gtag('config', 'G-9Q5V3WNLRG');
 
   document.getElementById('site-header').outerHTML = `
 <header>
+  <div class="rec-app-banner"><div class="container rec-app-banner-inner"><span>Discover great people. Recommend your favorites.</span><a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" rel="noopener">Download the REC App ↗</a></div></div>
   <nav class="container">
     <div class="nav-left">
       <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank">

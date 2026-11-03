@@ -942,3 +942,11 @@ header>nav{height:80px}
 @media(min-width:861px) and (max-width:1120px){.nav-socials{display:none}.nav-links{gap:.9rem}.nav-right{gap:1rem}.nav-links>li>a{font-size:12px}.nav-dl-btn{padding:10px 14px!important}}
 @media(max-width:860px){header>nav{height:72px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Visible app download on every screen, independent of Safari's native banner. */
+.rec-app-banner{background:var(--navy);color:#fff;font-size:12px}
+.rec-app-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
+.rec-app-banner a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px;flex-shrink:0}
+@media(max-width:600px){.rec-app-banner-inner{justify-content:center;min-height:42px}.rec-app-banner span{display:none}.rec-app-banner a{font-size:13px}}
+/* Keep long instructor menus on screen and keyboard accessible. */
+.nav-links>li:first-child+li>ul{max-height:calc(100dvh - 150px);overflow-y:auto}
