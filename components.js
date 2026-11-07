@@ -41,9 +41,9 @@ gtag('config', 'G-9Q5V3WNLRG');
       <ul class="nav-links">
         <li><a href="${b}index.html"${active(isHome)}>Home</a></li>
         <li>
-          <a href="${b}spotlight.html"${active(isInstructors)}>Instructor Spotlights <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
-          <ul aria-label="Instructor spotlights">
-            <li><a href="${b}spotlight.html">All Instructor Spotlights</a></li>
+          <a href="${b}spotlight.html"${active(isInstructors)}>Meet the Instructors <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
+          <ul aria-label="Instructor links">
+            <li><a href="${b}spotlight.html">All Instructors</a></li>
             <li><a href="${b}marlissa-hamgeri.html">Marlissa Hamgeri</a></li>
             <li><a href="${b}jazmin-esparza.html">Jazmin Esparza</a></li>
             <li><a href="${b}paulina.html">Paulina</a></li>
@@ -104,7 +104,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   </nav>
   <div class="mobile-menu" id="mob">
     <a href="${b}index.html">Home</a>
-    <a href="${b}spotlight.html">Instructor Spotlights</a>
+    <a href="${b}spotlight.html">Meet the Instructors</a>
     <a href="${b}marlissa-hamgeri.html" class="sub">&#8250; Marlissa Hamgeri</a>
     <a href="${b}jazmin-esparza.html" class="sub">&#8250; Jazmin Esparza</a>
     <a href="${b}paulina.html" class="sub">&#8250; Paulina</a>
