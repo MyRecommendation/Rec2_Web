@@ -167,6 +167,7 @@ gtag('config', 'G-9Q5V3WNLRG');
           <li><a href="${b}about-us.html">Who We Are</a></li>
           <li><a href="${b}index.html#for-instructors-and-studios">For Instructors &amp; Studios</a></li>
           <li><a href="${b}app-info.html">App Info</a></li>
+          <li><a href="${b}careers.html">Careers &amp; Internships</a></li>
           <li><a href="${b}terms.html">Terms & Conditions</a></li>
         </ul>
       </div>
