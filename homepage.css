@@ -128,3 +128,10 @@
 @media(max-width:450px){.home-instructor-grid{grid-template-columns:1fr}.home-instructor{display:flex}.home-instructor-photo{min-height:0}.home-instructor-photo img{height:auto;aspect-ratio:4/3;object-fit:cover}.home-instructor-copy{padding:1.4rem}.home-instructor h3{font-size:1.3rem}.home-instructor-copy>p:not([class]){font-size:.88rem}.home-hero-person{max-width:100%}.home-actions .btn{width:100%}.home-person-label{padding:1rem}}
 
 @media(max-width:450px){.home-hero{padding:2rem 0}.home-intro{display:none}.home-lead{font-size:1rem;margin-bottom:0}.home-actions{margin-top:1.25rem}.home-hero-grid{gap:1.5rem}.home-note{font-size:.7rem}}
+
+/* Keep the instructor photo close to the introduction on phones. */
+@media(max-width:450px){
+  .home-hero{padding-top:1.25rem}
+  .home-hero-grid{gap:1rem}
+  .home-hero-copy .home-actions{gap:.65rem;margin-top:1rem}
+}
