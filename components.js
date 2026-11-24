@@ -18,6 +18,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isHome        = /index\.html$/.test(p) || /\/$/.test(p);
   const isServices    = p.includes('our-services') || p.includes('/services/');
   const isAppInfo     = p.includes('app-info');
+  const isHowTo       = p.includes('how-to-use-rec');
   const isAbout       = p.includes('about-us');
   const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates') || p.includes('pure-barre-willowbrook') || p.includes('balance-yoga-pilates') || p.includes('saha-yoga');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter|marlissa-hamgeri)\.html$/.test(p);
@@ -78,7 +79,13 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li class="studio-submenu"><a href="${b}shred415.html">SHRED415 <span aria-hidden="true">‹</span></a><ul aria-label="SHRED415 locations"><li><a href="${b}shred415-naperville.html">SHRED415 Naperville</a></li><li><a href="${b}shred415-hinsdale.html">SHRED415 Hinsdale</a></li></ul></li>
           </ul>
         </li>
-        <li><a href="${b}app-info.html"${active(isAppInfo)}>App Info</a></li>
+        <li>
+          <a href="${b}app-info.html"${active(isAppInfo || isHowTo)}>App Info <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
+          <ul aria-label="REC app help">
+            <li><a href="${b}app-info.html">App Overview</a></li>
+            <li><a href="${b}how-to-use-rec.html"${active(isHowTo)}>How to Use REC</a></li>
+          </ul>
+        </li>
         <li><a href="${b}about-us.html"${active(isAbout)}>Who We Are</a></li>
         <li>
           <a href="${b}our-services.html"${active(isServices)}>Our Services <span style="font-size:9px;vertical-align:middle;">&#9660;</span></a>
@@ -139,6 +146,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}services/real-estate.html" class="sub">&#8250; Real Estate</a>
     <a href="${b}services/legal-services.html" class="sub">&#8250; Legal Services</a>
     <a href="${b}services/other.html" class="sub">&#8250; Other</a>
+    <a href="${b}how-to-use-rec.html"${active(isHowTo)}>How to Use REC</a>
     <div class="mob-cta">
       <a href="https://apps.apple.com/us/app/rec-my-recommendation/id6753791197" target="_blank" class="btn btn-blue" style="width:100%;justify-content:center;">Download App</a>
     </div>
@@ -169,6 +177,7 @@ gtag('config', 'G-9Q5V3WNLRG');
           <li><a href="${b}app-info.html">App Info</a></li>
           <li><a href="${b}careers.html">Careers &amp; Internships</a></li>
           <li><a href="${b}terms.html">Terms & Conditions</a></li>
+          <li><a href="${b}how-to-use-rec.html">How to Use REC</a></li>
         </ul>
       </div>
       
