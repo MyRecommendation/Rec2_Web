@@ -27,17 +27,18 @@
 
     .carousel-section { padding: clamp(3rem, 7vw, 5rem) 0; background: var(--white); }
     .carousel-section-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .carousel-section-inner > * { min-width: 0; }
     .carousel-section-text { text-align: left; }
     .carousel-intro { font-size: 15px; color: var(--body-text); line-height: 1.75; margin-bottom: 2rem; }
     .carousel-features { display: flex; flex-direction: column; gap: 1rem; }
     .feature-item { font-size: 14px; line-height: 1.6; color: var(--body-text); padding-left: 1.5rem; position: relative; }
     .feature-item::before { content: '✓'; color: var(--green); font-weight: bold; position: absolute; left: 0; top: 0; }
     .carousel-wrap-container { display: flex; justify-content: center; align-items: center; width: 100%; }
-    .carousel-wrap { position: relative; width: 100%; max-width: 360px; }
+    .carousel-wrap { position: relative; width: 100%; max-width: 280px; min-width: 0; }
     .carousel-track { overflow: hidden; border-radius: var(--radius); }
     .carousel-slides { display: flex; transition: transform 0.4s ease; }
-    .carousel-slide { min-width: 100%; }
-    .carousel-slide img { width: 100%; border-radius: var(--radius); display: block; }
+    .carousel-slide { flex: 0 0 100%; min-width: 0; }
+    .carousel-slide img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
     .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 1.25rem; }
     .carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: #cdd2e8; border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
     .carousel-dot.active { background: var(--navy); }
@@ -78,6 +79,7 @@
       .app-hero-inner { grid-template-columns: 1fr; }
       .carousel-section-inner { grid-template-columns: 1fr; gap: 3rem; }
       .carousel-section-text { text-align: center; }
+      .carousel-wrap { max-width: 240px; }
       .get-started-inner { grid-template-columns: 1fr; }
       .get-started-right { min-height: 260px; }
       .carousel-btn-prev { left: -12px; }
