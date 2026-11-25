@@ -1,0 +1,50 @@
+{
+  "verified": "2026-11-25",
+  "sources": [
+    "https://www.venomlagree.com/",
+    "https://www.venomlagree.com/contact",
+    "https://www.venomlagree.com/method",
+    "https://www.venomlagree.com/jumpstart"
+  ],
+  "owner": "Victoria, identified as owner on official homepage",
+  "locations": [
+    {
+      "id": "warrenville",
+      "name": "Warrenville",
+      "street": "28W520 Batavia Road",
+      "zip": "60555",
+      "phone": "630-296-4480",
+      "email": "warrenvillestudio@venomlagree.com"
+    },
+    {
+      "id": "wheaton",
+      "name": "Wheaton",
+      "street": "124 N Main Street",
+      "zip": "60187",
+      "phone": "630-296-4470",
+      "email": "wheatonstudio@venomlagree.com"
+    },
+    {
+      "id": "naperville",
+      "name": "Naperville",
+      "street": "24W500 Maple Avenue, Suite 107",
+      "zip": "60540",
+      "phone": "630-432-4882",
+      "email": "napervillestudio@venomlagree.com"
+    }
+  ],
+  "expansion": {
+    "city": "Downers Grove",
+    "status": "coming soon, per official contact page; no opening date or address asserted"
+  },
+  "photos": {
+    "warrenville": "https://images.squarespace-cdn.com/content/v1/6ac851a31ab74069c1b96eac/142e4fc3-5ede-4fdc-b03e-5e58895f5afa/warrenville-arched-mirror-wall-portrait.jpg",
+    "wheaton": "https://images.squarespace-cdn.com/content/v1/6ac851a31ab74069c1b96eac/7a0a4828-d977-4b38-83f1-463e48f04b8f/wheaton-studio-wide.jpg",
+    "naperville": "https://images.squarespace-cdn.com/content/v1/6ac851a31ab74069c1b96eac/bff9baf8-f165-447e-ab50-a59a765e8323/naperville-studio-wide.jpg"
+  },
+  "instructor_sources": [
+    "dani.html",
+    "kristen-richter.html"
+  ],
+  "recommendations": "No founder-authored recommendations used."
+}
