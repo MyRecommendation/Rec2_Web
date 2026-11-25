@@ -49,6 +49,7 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}jazmin-esparza.html">Jazmin Esparza</a></li>
             <li><a href="${b}paulina.html">Paulina</a></li>
             <li><a href="${b}sam.html">Sam</a></li>
+            <li><a href="${b}sue-l.html">Sue L</a></li>
             <li><a href="${b}chris-cundari.html">Chris Cundari</a></li>
             <li><a href="${b}danai.html">Danai</a></li>
             <li><a href="${b}madison.html">Madison</a></li>
@@ -116,6 +117,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}jazmin-esparza.html" class="sub">&#8250; Jazmin Esparza</a>
     <a href="${b}paulina.html" class="sub">&#8250; Paulina</a>
     <a href="${b}sam.html" class="sub">&#8250; Sam</a>
+    <a href="${b}sue-l.html" class="sub">&#8250; Sue L</a>
     <a href="${b}chris-cundari.html" class="sub">&#8250; Chris Cundari</a>
     <a href="${b}danai.html" class="sub">&#8250; Danai</a>
     <a href="${b}madison.html" class="sub">&#8250; Madison</a>

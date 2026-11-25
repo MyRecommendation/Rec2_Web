@@ -133,6 +133,19 @@
       ],
       "profile": "claudine-beeson.html",
       "note": "A recommendation for Claudine’s teaching; the original does not name a studio."
+    },
+    {
+      "id": "sue-jim",
+      "name": "Sue L",
+      "author": "Jim",
+      "date": "2026-07-14",
+      "source": "IMG_4819.png",
+      "quote": "Sue is a fantastic instructor that always brings a smile and positive attitude to class.",
+      "pages": [
+        "sue-l.html"
+      ],
+      "identity_confirmed_by_user": true,
+      "identity_source": "https://www.instagram.com/reel/DcO9v1FtpFe/"
     }
   ],
   "existing_recommendations": [
@@ -197,12 +210,6 @@
     }
   ],
   "pending_identification": [
-    {
-      "name": "Sue",
-      "source": "IMG_4819.png",
-      "quote": "Sue is a fantastic instructor that always brings a smile and positive attitude to class.",
-      "reason": "Need full name and studio to identify the correct instructor."
-    },
     {
       "name": "Maria",
       "source": "IMG_4819.png",
