@@ -20,7 +20,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isAppInfo     = p.includes('app-info');
   const isHowTo       = p.includes('how-to-use-rec');
   const isAbout       = p.includes('about-us');
-  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates') || p.includes('pure-barre-willowbrook') || p.includes('balance-yoga-pilates') || p.includes('saha-yoga') || p.includes('club-pilates-westmont');
+  const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates') || p.includes('pure-barre-willowbrook') || p.includes('balance-yoga-pilates') || p.includes('saha-yoga') || p.includes('club-pilates-westmont') || p.includes('karve-pilates-naperville') || p.includes('barre3-naperville') || p.includes('jetset-pilates-naperville');
   const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter|marlissa-hamgeri)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
@@ -65,7 +65,7 @@ gtag('config', 'G-9Q5V3WNLRG');
 <li>
           <a href="${b}studio-spotlights.html"${active(isStudios)}>Studio Spotlights <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
           <ul aria-label="Studio spotlights">
-            <li><a href="${b}studio-spotlights.html">All Studio Spotlights</a></li>
+            <li><a href="${b}studio-spotlights.html">All Studio Spotlights</a></li><li><a href="${b}karve-pilates-naperville.html">Karve Pilates</a></li><li><a href="${b}barre3-naperville.html">barre3 Naperville</a></li><li><a href="${b}jetset-pilates-naperville.html">JETSET Pilates Naperville</a></li>
             <li><a href="${b}shyft-pilates.html">Shyft Pilates</a></li><li><a href="${b}pure-barre-willowbrook.html">Pure Barre Willowbrook</a></li><li><a href="${b}club-pilates-westmont.html">Club Pilates Westmont</a></li><li><a href="${b}balance-yoga-pilates.html">Balance Yoga + Pilates</a></li><li><a href="${b}saha-yoga.html">Saha Yoga Studio</a></li>
             <li><a href="${b}just-be-yoga.html">Just Be Yoga</a></li>
             <li><a href="${b}yoga-by-degrees.html">Yoga by Degrees</a></li>
@@ -127,7 +127,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}laila-hana.html" class="sub">&#8250; Laila Hana</a>
     <a href="${b}dani.html" class="sub">&#8250; Dani</a>
     <a href="${b}kristen-richter.html" class="sub">&#8250; Kristen Richter</a>
-    <a href="${b}studio-spotlights.html">Studio Spotlights</a>
+    <a href="${b}studio-spotlights.html">Studio Spotlights</a><a class="sub" href="${b}karve-pilates-naperville.html">&#8250; Karve Pilates</a><a class="sub" href="${b}barre3-naperville.html">&#8250; barre3 Naperville</a><a class="sub" href="${b}jetset-pilates-naperville.html">&#8250; JETSET Pilates Naperville</a>
     <a href="${b}shyft-pilates.html" class="sub">&#8250; Shyft Pilates</a><a href="${b}pure-barre-willowbrook.html" class="sub">&#8250; Pure Barre Willowbrook</a><a href="${b}club-pilates-westmont.html" class="sub">&#8250; Club Pilates Westmont</a><a href="${b}balance-yoga-pilates.html" class="sub">&#8250; Balance Yoga + Pilates</a><a href="${b}saha-yoga.html" class="sub">&#8250; Saha Yoga Studio</a>
     <a href="${b}just-be-yoga.html" class="sub">&#8250; Just Be Yoga</a>
     <a href="${b}yoga-by-degrees.html" class="sub">&#8250; Yoga by Degrees</a>
