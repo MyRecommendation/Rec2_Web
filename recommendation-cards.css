@@ -11,3 +11,5 @@
 .rec-community-card .rec-card-link{font-size:1rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .rec-community-card a:focus-visible{outline:3px solid var(--blue-dark,#495bc9);outline-offset:4px}
 @media(max-width:600px){.rec-community-section{padding:2rem 0}.rec-community-grid{grid-template-columns:1fr}}
+
+.rec-app-more{margin-top:1rem}.rec-app-more summary{cursor:pointer;font-size:1rem;font-weight:800;color:var(--navy,#142a4c)}.rec-app-more p{font-size:1rem;line-height:1.65;margin:.8rem 0}.rec-app-more a{font-size:1rem;font-weight:700;text-decoration:underline}.rec-app-more summary:focus-visible{outline:3px solid var(--blue-dark,#495bc9);outline-offset:4px}
