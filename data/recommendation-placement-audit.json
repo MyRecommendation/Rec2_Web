@@ -2,115 +2,6 @@
   "updated": "2026-11-25",
   "new_recommendations": [
     {
-      "id": "madison-jim",
-      "name": "Madison Hall",
-      "author": "Jim",
-      "date": "2026-07-16",
-      "source": "IMG_4819.png",
-      "quote": "I had the opportunity to take one of Madison's classes while visiting Middleton and was really impressed. She's welcoming, knowledgeable,and creates a positive environment that makes everyone feel comfortable. Thanks Madison!",
-      "pages": [
-        "madison.html"
-      ]
-    },
-    {
-      "id": "steph-jim",
-      "name": "Steph Nash",
-      "author": "Jim",
-      "date": "2026-07-27",
-      "source": "IMG_4818.png",
-      "quote": "Steph is an amazing fitness instructor at Shred 415 in Naperville. She always has great music makes, makes class fun and is very energetic and motivating!",
-      "pages": [
-        "steph-nash.html",
-        "shred415-naperville.html"
-      ],
-      "profile": "steph-nash.html"
-    },
-    {
-      "id": "chris-jim",
-      "name": "Chris Cundari",
-      "author": "Jim",
-      "date": "2026-08-28",
-      "source": "IMG_4817.png",
-      "quote": "Chris is one of the best fitness trainers I known. he has an excellent knowledge and understanding of the human body.",
-      "pages": [
-        "chris-cundari.html"
-      ]
-    },
-    {
-      "id": "laila-jim",
-      "name": "Laila Hana",
-      "author": "Jim",
-      "date": "2026-08-12",
-      "source": "IMG_4817.png",
-      "quote": "I went to Bare in Naperville and wow what a class! Laila had a great vibe and energy. awesome music. kicks your butt but makes it fun. thank you!",
-      "pages": [
-        "laila-hana.html",
-        "barre3-naperville.html"
-      ],
-      "note": "Jim confirmed that his recommendation describes Laila’s class at barre3 Naperville. Original quote wording preserved.",
-      "studio": "barre3 Naperville",
-      "studio_confirmed_by_user": true
-    },
-    {
-      "id": "heather-jim",
-      "name": "Heather McCarthy",
-      "author": "Jim",
-      "date": "2026-09-01",
-      "source": "IMG_4816.png",
-      "quote": "Heather is fantastic! Great energy, great music, and knows exactly how to motivate you while kicking your butt and keeping you smiling😀",
-      "pages": [
-        "heather-mccarthy.html"
-      ]
-    },
-    {
-      "id": "amanda-jim",
-      "name": "Amanda Roszkowski",
-      "author": "Jim",
-      "date": "2026-08-30",
-      "source": "IMG_4816.png",
-      "quote": "Amanda is an amazing yoga instructor at YogaSix DG. Her classes are challenging, fun, and always have a great flow. Highly recommend taking a class with her!",
-      "pages": [
-        "yogasix-downers-grove.html"
-      ],
-      "note": "This recommendation describes Jim’s YogaSix Downers Grove experience when posted in August 2026. Check the studio’s current schedule for teaching availability."
-    },
-    {
-      "id": "ashley-jim",
-      "name": "Ashley",
-      "author": "Jim",
-      "date": "2026-10-15",
-      "source": "IMG_4815.png",
-      "quote": "Ashley is a big reason I love Shred415 Naperville! She brings amazing energy, makes every class fun, and keeps you motivated to push yourself. If you’re looking for an instructor who makes you excited to show up and work hard, take her class!",
-      "pages": [
-        "shred415-naperville.html"
-      ]
-    },
-    {
-      "id": "marlissa-jim",
-      "name": "Marlissa Hamgeri",
-      "author": "Jim",
-      "date": "2026-09-16",
-      "source": "IMG_4815.png",
-      "quote": "Loved Marlissa’s class! Great experienced instructor, challenging workout, and she made me feel welcome from the moment I walked in to the beautiful studio. She kept the class moving and fun. Definitely coming back for another class!",
-      "pages": [
-        "marlissa-hamgeri.html",
-        "shyft-pilates.html"
-      ],
-      "profile": "marlissa-hamgeri.html"
-    },
-    {
-      "id": "kristen-jim",
-      "name": "Kristen Richter",
-      "author": "Jim",
-      "date": "2026-09-15",
-      "source": "IMG_4815.png",
-      "quote": "amazing yoga instructor",
-      "pages": [
-        "kristen-richter.html"
-      ],
-      "note": "Shown in Jim’s original wording. His recommendation does not identify a studio or class format; see Kristen’s profile and live studio schedules for her Lagree teaching."
-    },
-    {
       "id": "erika-amy",
       "name": "Erika James",
       "author": "Amy Cohn Rieselman",
@@ -138,38 +29,96 @@
       "note": "A recommendation for Claudine’s teaching; the original does not name a studio."
     },
     {
-      "id": "sue-jim",
-      "name": "Sue L",
-      "author": "Jim",
-      "date": "2026-07-14",
-      "source": "IMG_4819.png",
-      "quote": "Sue is a fantastic instructor that always brings a smile and positive attitude to class.",
+      "id": "sam-dimitrie",
+      "name": "Sam K",
+      "author": "Dimitrie",
+      "date": "2026-06-15",
+      "quote": "the absolute best instructor around!",
+      "excerpt": false,
+      "source": "IMG_4824.jpeg",
       "pages": [
-        "sue-l.html"
+        "sam.html"
+      ]
+    },
+    {
+      "id": "sam-marisa",
+      "name": "Sam K",
+      "author": "Marisa P",
+      "date": "2026-11-25",
+      "quote": "Amazing teacher! The best energy, playlists and sequences!",
+      "excerpt": true,
+      "source": "IMG_4821.jpeg",
+      "pages": [
+        "sam.html",
+        "yogasix-naperville.html"
+      ]
+    },
+    {
+      "id": "heather-steve",
+      "name": "Heather McCarthy",
+      "author": "Steve Nero",
+      "date": "2026-09-02",
+      "quote": "One of the best trainers I've had. I'm glad we crossed paths and looking forward to many more classes.",
+      "excerpt": true,
+      "source": "IMG_4823.jpeg",
+      "pages": [
+        "heather-mccarthy.html"
+      ]
+    },
+    {
+      "id": "heather-member",
+      "name": "Heather McCarthy",
+      "author": "REC member",
+      "date": "2026-10-08",
+      "quote": "my Fav ❤️!! She always has the best soundtrack, best vibes, great nutrition advice and smart movement.",
+      "excerpt": true,
+      "source": "IMG_4822.jpeg",
+      "pages": [
+        "heather-mccarthy.html"
       ],
-      "identity_confirmed_by_user": true,
-      "identity_source": "https://www.instagram.com/reel/DcO9v1FtpFe/"
+      "author_note": "Reviewer displayed by email in supplied admin screenshot; public credit anonymized."
+    },
+    {
+      "id": "chris-aarti",
+      "name": "Chris Cundari",
+      "author": "Aarti Gautam",
+      "date": "2026-07-20",
+      "quote": "Trust Chris with your workouts and you will never look back! hands down the best of the best.",
+      "excerpt": true,
+      "source": "IMG_4823.jpeg",
+      "pages": [
+        "chris-cundari.html"
+      ]
+    },
+    {
+      "id": "mel-meagan",
+      "name": "Mel",
+      "author": "Meagan",
+      "date": "2026-10-07",
+      "quote": "one of the best yoga teachers in the area!",
+      "excerpt": true,
+      "source": "IMG_4822.jpeg",
+      "pages": [
+        "mel.html",
+        "saha-yoga.html"
+      ]
+    },
+    {
+      "id": "danai-member",
+      "name": "Danai",
+      "author": "REC member",
+      "date": "2026-07-18",
+      "quote": "Excellent class today! Well laid out and explained!",
+      "excerpt": false,
+      "source": "IMG_4823.jpeg",
+      "pages": [
+        "danai.html",
+        "yogasix-downers-grove.html"
+      ],
+      "author_note": "Reviewer identity not visible in supplied screenshot; no email or inferred name published."
     }
   ],
   "existing_recommendations": [
-    {
-      "name": "Dani D",
-      "status": "already published",
-      "pages": [
-        "dani.html",
-        "yoga-by-degrees.html"
-      ],
-      "source": "IMG_4817.png"
-    },
-    {
-      "name": "Nataly Vargas",
-      "status": "already published",
-      "pages": [
-        "nataly-vargas.html",
-        "index.html"
-      ],
-      "source": "IMG_4818.png"
-    },
     {
       "name": "Sam K",
       "author": "Mel",
@@ -240,8 +189,17 @@
     }
   ],
   "notes": [
-    "Posted recs screenshots are Jim’s recommendations; Activity screenshots show reviewer above and recipient below.",
-    "No new instructor likenesses used. No studio-wide rating or review schema added.",
-    "Laila’s barre3 Naperville connection confirmed by Jim; original recommendation wording retained. Heather and Kristen recommendations do not name a studio."
-  ]
+    "Only recommendations by other community members are published; founder-authored recommendations are excluded by request.",
+    "New admin-table excerpts contain only fully visible text. Ellipses identify excerpts; no missing wording reconstructed.",
+    "Private reviewer emails are never published. Where a public display name is absent, credit is REC member.",
+    "Read more opens instructions to find the instructor in REC; direct profile/recommendation links are not yet available."
+  ],
+  "publication_policy": {
+    "exclude_authors": [
+      "Jim",
+      "Jim Jarog"
+    ],
+    "excerpt_missing_text": false,
+    "publish_reviewer_emails": false
+  }
 }
