@@ -1,0 +1,237 @@
+{
+  "updated": "2026-11-25",
+  "new_recommendations": [
+    {
+      "id": "madison-jim",
+      "name": "Madison Hall",
+      "author": "Jim",
+      "date": "2026-07-16",
+      "source": "IMG_4819.png",
+      "quote": "I had the opportunity to take one of Madison's classes while visiting Middleton and was really impressed. She's welcoming, knowledgeable,and creates a positive environment that makes everyone feel comfortable. Thanks Madison!",
+      "pages": [
+        "madison.html"
+      ]
+    },
+    {
+      "id": "steph-jim",
+      "name": "Steph Nash",
+      "author": "Jim",
+      "date": "2026-07-27",
+      "source": "IMG_4818.png",
+      "quote": "Steph is an amazing fitness instructor at Shred 415 in Naperville. She always has great music makes, makes class fun and is very energetic and motivating!",
+      "pages": [
+        "steph-nash.html",
+        "shred415-naperville.html"
+      ],
+      "profile": "steph-nash.html"
+    },
+    {
+      "id": "chris-jim",
+      "name": "Chris Cundari",
+      "author": "Jim",
+      "date": "2026-08-28",
+      "source": "IMG_4817.png",
+      "quote": "Chris is one of the best fitness trainers I known. he has an excellent knowledge and understanding of the human body.",
+      "pages": [
+        "chris-cundari.html"
+      ]
+    },
+    {
+      "id": "laila-jim",
+      "name": "Laila Hana",
+      "author": "Jim",
+      "date": "2026-08-12",
+      "source": "IMG_4817.png",
+      "quote": "I went to Bare in Naperville and wow what a class! Laila had a great vibe and energy. awesome music. kicks your butt but makes it fun. thank you!",
+      "pages": [
+        "laila-hana.html"
+      ],
+      "note": "Jim’s original wording names “Bare in Naperville.” The exact studio has not been confirmed, so this recommendation is shown with Laila’s profile only."
+    },
+    {
+      "id": "heather-jim",
+      "name": "Heather McCarthy",
+      "author": "Jim",
+      "date": "2026-09-01",
+      "source": "IMG_4816.png",
+      "quote": "Heather is fantastic! Great energy, great music, and knows exactly how to motivate you while kicking your butt and keeping you smiling😀",
+      "pages": [
+        "heather-mccarthy.html"
+      ]
+    },
+    {
+      "id": "amanda-jim",
+      "name": "Amanda Roszkowski",
+      "author": "Jim",
+      "date": "2026-08-30",
+      "source": "IMG_4816.png",
+      "quote": "Amanda is an amazing yoga instructor at YogaSix DG. Her classes are challenging, fun, and always have a great flow. Highly recommend taking a class with her!",
+      "pages": [
+        "yogasix-downers-grove.html"
+      ],
+      "note": "This recommendation describes Jim’s YogaSix Downers Grove experience when posted in August 2026. Check the studio’s current schedule for teaching availability."
+    },
+    {
+      "id": "ashley-jim",
+      "name": "Ashley",
+      "author": "Jim",
+      "date": "2026-10-15",
+      "source": "IMG_4815.png",
+      "quote": "Ashley is a big reason I love Shred415 Naperville! She brings amazing energy, makes every class fun, and keeps you motivated to push yourself. If you’re looking for an instructor who makes you excited to show up and work hard, take her class!",
+      "pages": [
+        "shred415-naperville.html"
+      ]
+    },
+    {
+      "id": "marlissa-jim",
+      "name": "Marlissa Hamgeri",
+      "author": "Jim",
+      "date": "2026-09-16",
+      "source": "IMG_4815.png",
+      "quote": "Loved Marlissa’s class! Great experienced instructor, challenging workout, and she made me feel welcome from the moment I walked in to the beautiful studio. She kept the class moving and fun. Definitely coming back for another class!",
+      "pages": [
+        "marlissa-hamgeri.html",
+        "shyft-pilates.html"
+      ],
+      "profile": "marlissa-hamgeri.html"
+    },
+    {
+      "id": "kristen-jim",
+      "name": "Kristen Richter",
+      "author": "Jim",
+      "date": "2026-09-15",
+      "source": "IMG_4815.png",
+      "quote": "amazing yoga instructor",
+      "pages": [
+        "kristen-richter.html"
+      ],
+      "note": "Shown in Jim’s original wording. His recommendation does not identify a studio or class format; see Kristen’s profile and live studio schedules for her Lagree teaching."
+    },
+    {
+      "id": "erika-amy",
+      "name": "Erika James",
+      "author": "Amy Cohn Rieselman",
+      "date": "2026-11-01",
+      "source": "IMG_4811.png",
+      "quote": "I love Erika’s Saturday @9 Saha Flow. It’s different every time as far as what we stretch, then her flow is almost always the same going through the warriors, and other asanas to build leg strength. She plays bowls during Savasana. I always feel invigorated and happy after!",
+      "pages": [
+        "saha-yoga.html"
+      ],
+      "note": "Amy described the class she attended in November 2026. Confirm current days, times, and teachers on Saha’s live schedule.",
+      "official": "https://sahayogastudio.com/erika/"
+    },
+    {
+      "id": "claudine-amy",
+      "name": "Claudine Beeson",
+      "author": "Amy Cohn Rieselman",
+      "date": "2026-11-01",
+      "source": "IMG_4811.png",
+      "quote": "Claudine is so talented and masterful as a yoga teacher. Expect fun, challenge, and something new every class. People seek her out. I feel blessed to be her student!",
+      "pages": [
+        "claudine-beeson.html",
+        "just-be-yoga.html"
+      ],
+      "profile": "claudine-beeson.html",
+      "note": "A recommendation for Claudine’s teaching; the original does not name a studio."
+    }
+  ],
+  "existing_recommendations": [
+    {
+      "name": "Dani D",
+      "status": "already published",
+      "pages": [
+        "dani.html",
+        "yoga-by-degrees.html"
+      ],
+      "source": "IMG_4817.png"
+    },
+    {
+      "name": "Nataly Vargas",
+      "status": "already published",
+      "pages": [
+        "nataly-vargas.html",
+        "index.html"
+      ],
+      "source": "IMG_4818.png"
+    },
+    {
+      "name": "Sam K",
+      "author": "Mel",
+      "status": "already published",
+      "pages": [
+        "sam.html",
+        "yogasix-naperville.html",
+        "index.html"
+      ],
+      "source": "IMG_4813.png"
+    },
+    {
+      "name": "Jazmin Esparza",
+      "author": "Maria",
+      "status": "already published; historical Enerjia Wellness context retained",
+      "pages": [
+        "jazmin-esparza.html",
+        "index.html"
+      ],
+      "source": "IMG_4813.png"
+    },
+    {
+      "name": "Sierra S",
+      "author": "Mel",
+      "status": "already published on homepage; no existing dedicated instructor or studio page",
+      "pages": [
+        "index.html"
+      ],
+      "source": "IMG_4812.png"
+    },
+    {
+      "name": "Claudine Beeson",
+      "author": "Steph",
+      "status": "already published; added original date",
+      "pages": [
+        "claudine-beeson.html",
+        "just-be-yoga.html",
+        "index.html"
+      ],
+      "source": "IMG_4812.png"
+    }
+  ],
+  "pending_identification": [
+    {
+      "name": "Sue",
+      "source": "IMG_4819.png",
+      "quote": "Sue is a fantastic instructor that always brings a smile and positive attitude to class.",
+      "reason": "Need full name and studio to identify the correct instructor."
+    },
+    {
+      "name": "Maria",
+      "source": "IMG_4819.png",
+      "reason": "Aesthetician recommendation is cut off; need complete text and identifying studio/business."
+    },
+    {
+      "name": "Mel",
+      "source": "IMG_4818.png",
+      "reason": "Name and date visible but recommendation body cut off."
+    },
+    {
+      "name": "Derek",
+      "source": "IMG_4817.png",
+      "reason": "Recommendation body cut off."
+    },
+    {
+      "name": "Joey",
+      "source": "IMG_4813.png",
+      "reason": "Recommendation target and body cut off."
+    },
+    {
+      "name": "Unidentified DRIPYOGA instructor",
+      "source": "IMG_4819.png",
+      "reason": "Recommendation begins under the fixed header; target and full text not visible."
+    }
+  ],
+  "notes": [
+    "Posted recs screenshots are Jim’s recommendations; Activity screenshots show reviewer above and recipient below.",
+    "No new instructor likenesses used. No studio-wide rating or review schema added.",
+    "Laila studio wording retained without assigning it to barre3. Heather and Kristen recommendations do not name a studio."
+  ]
+}
