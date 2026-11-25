@@ -1,0 +1,13 @@
+/* Genuine community recommendations shared by the user from REC. */
+.rec-community-section{padding:3rem 0;scroll-margin-top:120px}
+.rec-community-section h2{color:var(--navy,#142a4c);font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.25;margin:0 0 1.5rem}
+.rec-community-eyebrow{color:var(--blue-dark,#495bc9);font-size:.875rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:0 0 .75rem}
+.rec-community-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.5rem;align-items:start}
+.rec-community-card{min-width:0;padding:clamp(1.25rem,3vw,2rem);border:1px solid var(--border,#dbe5f4);border-radius:20px;background:#fff;scroll-margin-top:120px;overflow-wrap:break-word}
+.rec-community-card h3{color:var(--navy,#142a4c);font-size:1.35rem;line-height:1.3;margin:0 0 1rem}
+.rec-community-card blockquote{margin:0;padding:0;border:0;font-style:normal;text-align:left}
+.rec-community-card blockquote p{font-size:1.125rem;line-height:1.75;margin:0 0 1.25rem;color:var(--navy,#142a4c)}
+.rec-community-card .rec-card-byline,.rec-community-card .rec-card-note{font-size:.875rem;line-height:1.65;margin:0 0 .75rem;color:#53627a}
+.rec-community-card .rec-card-link{font-size:1rem;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.rec-community-card a:focus-visible{outline:3px solid var(--blue-dark,#495bc9);outline-offset:4px}
+@media(max-width:600px){.rec-community-section{padding:2rem 0}.rec-community-grid{grid-template-columns:1fr}}
