@@ -1,0 +1,20 @@
+{
+  "verified": "2026-11-25",
+  "studio": "DRIPYOGA Glen Ellyn",
+  "sources": [
+    "https://www.dripyogastudio.com/",
+    "https://www.dripyogastudio.com/about-2",
+    "https://www.dripyogastudio.com/contact",
+    "https://www.dripyogastudio.com/schedule-header"
+  ],
+  "images": {
+    "images/studios/dripyoga/studio.webp": "https://images.squarespace-cdn.com/content/v1/5e2e36ecb938031d44f61626/047d2d76-75c2-40dd-a6f6-6f4ba6d45d99/drip_yoga_hot_yoga_studio.png",
+    "images/studios/dripyoga/welcome.webp": "https://images.squarespace-cdn.com/content/v1/5e2e36ecb938031d44f61626/a49c485a-6452-4ac0-ad33-30bb767aa84e/DSC03899.jpg"
+  },
+  "instructor_sources": [
+    "mel.html",
+    "sam.html",
+    "sue-l.html"
+  ],
+  "recommendation_source": "IMG_4822.jpeg; Meagan for Mel; quote does not name a studio"
+}
