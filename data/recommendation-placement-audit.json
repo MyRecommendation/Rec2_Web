@@ -44,9 +44,12 @@
       "source": "IMG_4817.png",
       "quote": "I went to Bare in Naperville and wow what a class! Laila had a great vibe and energy. awesome music. kicks your butt but makes it fun. thank you!",
       "pages": [
-        "laila-hana.html"
+        "laila-hana.html",
+        "barre3-naperville.html"
       ],
-      "note": "Jim’s original wording names “Bare in Naperville.” The exact studio has not been confirmed, so this recommendation is shown with Laila’s profile only."
+      "note": "Jim confirmed that his recommendation describes Laila’s class at barre3 Naperville. Original quote wording preserved.",
+      "studio": "barre3 Naperville",
+      "studio_confirmed_by_user": true
     },
     {
       "id": "heather-jim",
@@ -239,6 +242,6 @@
   "notes": [
     "Posted recs screenshots are Jim’s recommendations; Activity screenshots show reviewer above and recipient below.",
     "No new instructor likenesses used. No studio-wide rating or review schema added.",
-    "Laila studio wording retained without assigning it to barre3. Heather and Kristen recommendations do not name a studio."
+    "Laila’s barre3 Naperville connection confirmed by Jim; original recommendation wording retained. Heather and Kristen recommendations do not name a studio."
   ]
 }
