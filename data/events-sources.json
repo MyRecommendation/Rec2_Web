@@ -10,5 +10,54 @@
     "recap": "https://instagram.com/p/Da-7jUGBH2W/",
     "date": "Summer 2026 retrospective only. Exact REC visit date not confirmed; multiple DRIPYOGA dates found.",
     "video": "Share link could not be fetched; link to recap without embedding, copying imagery or asserting video contents."
+  },
+  "photo_gallery": {
+    "source": "User supplied originals; confirmed different weekends and events at Block 59",
+    "not_all_dripyoga": true,
+    "processing": "Proportional resizing and WebP compression only; no appearance edits",
+    "photos": [
+      {
+        "src": "images/events/block59/outdoor-yoga.webp",
+        "width": 1200,
+        "height": 900,
+        "alt": "An outdoor yoga class spread across the Green at Block 59",
+        "supplied_file": "469CE4C6-E7B9-4284-BC16-EE73AFA42ADA.jpeg"
+      },
+      {
+        "src": "images/events/block59/class-in-motion.webp",
+        "width": 1200,
+        "height": 900,
+        "alt": "Participants moving together during an outdoor class at Block 59",
+        "supplied_file": "06CE9722-A071-4E0E-BE7D-BADA6BD4C8E1.jpeg"
+      },
+      {
+        "src": "images/events/block59/rec-community.webp",
+        "width": 900,
+        "height": 1200,
+        "alt": "A participant wearing a REC shirt during a resistance-band workout",
+        "supplied_file": "191C151B-15AC-49AC-A91B-F5C80025876D.jpeg"
+      },
+      {
+        "src": "images/events/block59/rec-fan.webp",
+        "width": 774,
+        "height": 1200,
+        "alt": "A participant holding a REC fan on the Green at Block 59",
+        "supplied_file": "0C57D267-8C79-4181-AE34-696707CC0822.jpeg"
+      },
+      {
+        "src": "images/events/block59/jfit-group.webp",
+        "width": 1200,
+        "height": 1155,
+        "alt": "A Fitness on the Green group photo in front of the stage with a J-Fit banner",
+        "supplied_file": "479BA0C0-D084-4860-8AE1-E21C85002032.jpeg"
+      },
+      {
+        "src": "images/events/block59/stage-session.webp",
+        "width": 900,
+        "height": 1200,
+        "alt": "An instructor-led outdoor session at the Block 59 stage",
+        "supplied_file": "D077C21E-07DB-43E2-8286-CA13CDA182F1.jpeg"
+      }
+    ]
   }
 }
