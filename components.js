@@ -85,7 +85,7 @@ gtag('config', 'G-9Q5V3WNLRG');
           <a href="${b}app-info.html"${active(isAppInfo || isHowTo)}>App Info <span style="font-size:9px;vertical-align:middle;" aria-hidden="true">&#9660;</span></a>
           <ul aria-label="REC app help">
             <li><a href="${b}app-info.html">App Overview</a></li>
-            <li><a href="${b}how-to-use-rec.html"${active(isHowTo)}>How to Use REC</a><a href="${b}events.html"${active(isEvents)}>Events &amp; Community</a></li>
+            <li><a href="${b}how-to-use-rec.html"${active(isHowTo)}>How to Use REC</a></li>
           </ul>
         </li>
         <li><a href="${b}about-us.html"${active(isAbout || isEvents)}>Who We Are</a><ul aria-label="REC community"><li><a href="${b}about-us.html">About REC</a></li><li><a href="${b}events.html"${active(isEvents)}>Events &amp; Community</a></li></ul></li>
