@@ -22,7 +22,7 @@ gtag('config', 'G-9Q5V3WNLRG');
   const isEvents      = p.includes('events.html');
   const isAbout       = p.includes('about-us');
   const isStudios = p.includes('studio-spotlights') || p.includes('yogasix') || p.includes('shred415') || p.includes('just-be-yoga') || p.includes('yoga-by-degrees') || p.includes('shyft-pilates') || p.includes('pure-barre-willowbrook') || p.includes('balance-yoga-pilates') || p.includes('saha-yoga') || p.includes('dripyoga-glen-ellyn') || p.includes('venom-lagree') || p.includes('field-house-middleton') || p.includes('club-pilates-westmont') || p.includes('karve-pilates-naperville') || p.includes('barre3-naperville') || p.includes('jetset-pilates-naperville');
-  const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter|marlissa-hamgeri)\.html$/.test(p);
+  const isInstructors = p.includes('spotlight.html') || /\/(paulina|jazmin-esparza|sam|chris-cundari|danai|joanna-moving-with-jo|madison|mel|nataly-vargas|claudine-beeson|steph-nash|heather-mccarthy|laila-hana|dani|kristen-richter|marlissa-hamgeri)\.html$/.test(p);
 
   function active(cond) { return cond ? ' class="active"' : ''; }
 
@@ -53,7 +53,7 @@ gtag('config', 'G-9Q5V3WNLRG');
             <li><a href="${b}sue-l.html">Sue L</a></li>
             <li><a href="${b}chris-cundari.html">Chris Cundari</a></li>
             <li><a href="${b}danai.html">Danai</a></li>
-            <li><a href="${b}madison.html">Madison</a></li>
+            <li><a href="${b}madison.html">Madison</a></li><li><a href="${b}joanna-moving-with-jo.html">Joanna · Moving with Jo</a></li>
             <li><a href="${b}mel.html">Mel</a></li>
             <li><a href="${b}nataly-vargas.html">Nataly Vargas</a></li>
             <li><a href="${b}claudine-beeson.html">Claudine Beeson</a></li>
@@ -121,7 +121,7 @@ gtag('config', 'G-9Q5V3WNLRG');
     <a href="${b}sue-l.html" class="sub">&#8250; Sue L</a>
     <a href="${b}chris-cundari.html" class="sub">&#8250; Chris Cundari</a>
     <a href="${b}danai.html" class="sub">&#8250; Danai</a>
-    <a href="${b}madison.html" class="sub">&#8250; Madison</a>
+    <a href="${b}madison.html" class="sub">&#8250; Madison</a><a href="${b}joanna-moving-with-jo.html" class="sub">&#8250; Joanna · Moving with Jo</a>
     <a href="${b}mel.html" class="sub">&#8250; Mel</a>
     <a href="${b}nataly-vargas.html" class="sub">&#8250; Nataly Vargas</a>
     <a href="${b}claudine-beeson.html" class="sub">&#8250; Claudine Beeson</a>
